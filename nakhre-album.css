@@ -68,6 +68,27 @@ body[data-open-object="nakhre"] .close-button{background:#fff9efa8;border-color:
 .pm-disclosure{font:10px/1.6 var(--sans);color:#a18190;margin:10px 0 0}
 .pm-status{font:italic 12px/1.6 var(--serif);color:#876e49;margin:12px 0 0}
 .pm-status.is-error{color:#a7425a}
+.pm-birthday-maths{font:italic 13px/1.6 var(--serif);color:#a27686;margin:-7px 0 20px}
+.pm-receipt-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+.pm-receipt-actions button,.pm-edit-cancel{min-height:40px;border:1px solid #bc8ba1;border-radius:22px;background:#fff8ed;color:#8a4566;padding:8px 14px;font:11px/1.4 var(--sans);cursor:pointer}
+.pm-receipt-actions button:last-child{background:#9b5777;color:#fff9f0;border-color:#9b5777}
+.pm-edit-cancel{margin-top:10px}
+.pm-receipt-actions button:hover,.pm-edit-cancel:hover{filter:brightness(1.06)}
+.pm-receipt-actions button:focus-visible,.pm-edit-cancel:focus-visible{outline:3px solid #be90a9;outline-offset:3px}
+.pm-receipt[hidden],#pm-ballot-form[hidden],.pm-edit-cancel[hidden]{display:none}
+.pm-tally strong{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pm-tally>div:first-child{flex-wrap:wrap}
+.pm-tally strong{font-size:15px;color:#874363}
+.ballot-reaction{position:fixed;inset:0;width:100vw;height:100vh;height:100svh;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:transparent;pointer-events:none!important;z-index:1200;contain:strict}
+.ballot-reaction::backdrop{background:transparent;pointer-events:none}
+.ballot-reaction *{pointer-events:none!important}
+.ballot-reaction-label{position:absolute;top:19%;left:50%;width:max-content;max-width:88vw;box-sizing:border-box;border:2px solid #d5a5b6;border-radius:18px;padding:15px 22px;background:#fff8ed;color:#8b4665;box-shadow:0 10px 35px #74455922;text-align:center;font:italic 600 clamp(19px,3vw,34px)/1.25 var(--serif)}
+.ballot-reaction--no .ballot-reaction-label{background:#fff0c9;border-color:#c77e63;color:#9e4654}
+.ballot-flower,.ballot-boom-piece{position:absolute;display:block;line-height:1;will-change:transform,opacity}
+.ballot-flower{text-shadow:0 2px 3px #a2617520}
+.ballot-boom-piece{color:#e8ad50;text-shadow:0 0 7px #f8d38b70}
+.ballot-boom-ring{position:absolute;width:75px;height:75px;border:4px solid #e8ba67;border-radius:50%;box-shadow:0 0 30px #efbb5950}
+@media(max-height:650px) and (orientation:landscape){.pm-results-heading{flex-wrap:wrap}.pm-total{font-size:10px}.pm-birthday-maths{font-size:11px}.ballot-reaction-label{top:14%;padding:11px 17px}}
 .pm-retry{border:0;border-bottom:1px solid #b97793;background:none;padding:4px 0;margin-top:7px;color:#914769;font:11px/1.4 var(--sans)}
 .pm-receipt{border:1px dashed #ba809a;border-radius:4px;background:#f4e1e5;padding:19px 15px;color:#874160}
 .pm-receipt strong,.pm-receipt span{display:block;font:13px/1.6 var(--sans)}

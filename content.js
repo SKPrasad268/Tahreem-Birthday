@@ -438,9 +438,8 @@ window.BIRTHDAY = {
     { id: "kinder-7", kind: "moonwalk", title: "Moonwalk, sparks & BOOOM!", text: "A seven-second dance around your bouquet. Tap egg 7 to watch it again.", image: "", imageAlt: "" }
   ],
 
-  // Leave apiBase empty for automatic local voting. Set the complete HTTPS
-  // /api/nakhre-pm endpoint when the shared backend is hosted separately.
-  voting: { apiBase: "" },
+  // The playful birthday ballot saves one changeable vote in this browser.
+  voting: { mode: "local" },
   privateAlbum: {
     src: "assets/private-album/album.encrypted.json",
     script: "assets/private-album/album.encrypted.js"
