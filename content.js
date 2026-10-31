@@ -391,7 +391,7 @@ window.BIRTHDAY = {
     }
   ],
 
-  // Five birthday surprises are ready; eggs 6–7 are reserved for the final additions.
+  // All seven birthday surprises are ready.
   // Preserve the original folder spelling and filenames in image paths.
   kinderSurprises: [
     {
@@ -423,11 +423,19 @@ window.BIRTHDAY = {
     { id: "kinder-4", kind: "party", title: "Celebration bomb", text: "A little egg. A whole lot of birthday chaos.", image: "", imageAlt: "" },
     {
       id: "kinder-5", kind: "childhood", title: "Hai koi mujhse tej..?",
-      text: "", image: "assets/kinerjoy/childhood pic 2.jpeg",
+      text: "", image: "assets/kinerjoy/childhood pic 2.png",
       imageAlt: "A second childhood photo of Tahreem in a light blue outfit.", revealText: ""
     },
-    { id: "kinder-6", kind: "sticker", title: "Surprise 6", text: "", image: "", imageAlt: "" },
-    { id: "kinder-7", kind: "sticker", title: "Surprise 7", text: "", image: "", imageAlt: "" }
+    {
+      id: "kinder-6", kind: "pokemon", title: "Ye konsa Pokemon hai...",
+      text: "Ye hai Tahreem-Mon",
+      image: "assets/kinerjoy/Pokemon meme.png",
+      imageAlt: "Tahreem wearing glasses, revealed as Tahreem-Mon.",
+      backdrop: "assets/kinerjoy/pokemon-question-backdrop.png",
+      questionAudio: "assets/kinerjoy/Ye Konsa Pokemon hai.mp3",
+      revealAudio: "assets/kinerjoy/ye hai....mp3"
+    },
+    { id: "kinder-7", kind: "moonwalk", title: "Moonwalk, sparks & BOOOM!", text: "A seven-second dance around your bouquet. Tap egg 7 to watch it again.", image: "", imageAlt: "" }
   ],
 
   // Leave apiBase empty for automatic local voting. Set the complete HTTPS

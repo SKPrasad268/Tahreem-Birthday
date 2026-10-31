@@ -6,6 +6,8 @@ A pink birthday garden for **Tahreem — 1 November 2026**, made as a static web
 
 All personal writing and photo references live in [`content.js`](content.js). Edit that file before sharing the link.
 
+Titles now display a few contextual emojis across the Album, Nakhre pages and enlarged screenshots, Kinder Joys, notes, wishes, and radio. `title-emojis.js` contains the chosen pairs and appends them to the browser's display data, so asset sync keeps the original filename wording and the emojis reappear on every load. Titles already containing two emojis keep those. Private-album headings receive context-based emojis only in memory after unlock. Include `title-emojis.js` with the other root files when uploading; the public packager includes it automatically.
+
 - `name`, `birthday`, and `sender`: set the birthday details and your name.
 - `age`: **16**, confirmed for her birthday on 1 November 2026.
 - `favoriteFlower`: currently an empty string because her favourite flower has not been confirmed. Set it when she replies to display her favourite flower in the caption. The initial artwork uses decorative pink blossoms; changing this field does not redraw the illustration. The artwork can be updated once her favourite is known.
@@ -88,15 +90,20 @@ Opening **Your Surprise** reveals a large bouquet made of Kinder Joy eggs and pi
 
 The seven visible Kinder Joys gently wiggle and can each be tapped open. The numbered egg buttons below the bouquet provide larger touch targets. Each opens an animated egg and its own message card. A placeholder is shown while its final content is empty.
 
-The first five eggs now contain personalised surprises:
+All seven eggs now contain personalised surprises:
 
 1. **Drama Queen Award** — an HTML certificate with a crown, paper border, rosette, and gentle birthday teasing. Its `nickname`, `text`, and `closing` remain editable in `content.js`.
 2. **7 things that make Tahreem, Tahreem** — the seven supplied lines, preserved verbatim in `items` and displayed as a numbered list.
 3. **Badi hoke bada aadmi banungi** — the original childhood photo at `assets/kinerjoy/Childhood pic.png`, followed by a **Reveal message** button for “Kya matlab khud choti reh gyi”. The punchline stays hidden until selected; the button can hide it again.
 4. **Celebration bomb** — selecting the egg automatically bursts its shell, briefly shakes the garden and dialog, and sends flowers, paper ribbons, and firework rays across the screen. The **More birthday chaos** button replays it. Leaving the view, resizing, or backgrounding removes the effects. Breeze off and reduced motion show a still birthday celebration. `party-bomb.js` and `party-bomb.css` own the effect and preserve radio playback.
-5. **Hai koi mujhse tej..?** — the second original childhood photo at `assets/kinerjoy/childhood pic 2.jpeg`.
+5. **Hai koi mujhse tej..?** — the second original childhood photo at `assets/kinerjoy/childhood pic 2.png`.
 
-Eggs 6–7 are reserved for the final additions or stickers. Add their images to `image` and descriptions to `imageAlt` when ready. The voice note and comic have been dropped. `kinder-keepsakes.css` styles these cards alongside the existing egg openings and connected transitions; include it and the party files with the other root files when uploading.
+6. **Ye konsa Pokemon hai...** — her transparent portrait appears as a black silhouette on the supplied meme backdrop. The question clip plays first, then the reveal clip uncovers Tahreem. The backdrop fades into her photo and “Ye hai Tahreem-Mon”. **Watch it again** replays the sequence. `pokemon-surprise.js` and `.css` own this surprise.
+7. **Moonwalk, sparks & BOOOM!** — stays on the bouquet screen for a seven-second stickman performance. A fedora-wearing dancer moonwalks with boot sparks, backflips onto the letter card and bouquet, hops between eggs, then taps bomb egg 4 at 5.85 seconds. The existing floral explosion throws him off-screen, with everything cleared at seven seconds. Tap egg 7 again at any time to restart. The egg, numbered picker, and discovery flower all trigger the same performance.
+
+`moonwalk-surprise.js` and `.css` measure the real bouquet and note-card positions for each run. A short generated explosion sound accompanies the finale when browser audio is available. Radio playback continues. Closing, navigating, scrolling, resizing, hiding the tab, or turning the phone upright cancels the performance and removes its effects. Breeze off and reduced motion show a still text description. Include the new root files in the upload; the public packager includes them automatically.
+
+The voice note and comic have been dropped. `kinder-keepsakes.css` styles the other cards alongside the existing egg openings and connected transitions; include it and the party files with the other root files when uploading.
 
 Add the later messages and pictures to `kinderSurprises` in `content.js`:
 

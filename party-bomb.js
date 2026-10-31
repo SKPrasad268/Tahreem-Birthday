@@ -15,15 +15,17 @@
       state.layer.remove(); state.layer = null;
     }
     document.documentElement.classList.remove('birthday-blast-active');
-    state.button.disabled = false;
-    state.button.removeAttribute('aria-busy');
+    if (state.button) {
+      state.button.disabled = false;
+      state.button.removeAttribute('aria-busy');
+    }
   }
   function cancel() {
     if (!current) return;
     const state = current; current = null;
     stop(state);
-    state.button.removeEventListener('click', state.fire);
-    state.egg.removeEventListener('click', state.fire);
+    state.button?.removeEventListener('click', state.fire);
+    if (state.fire) state.egg.removeEventListener('click', state.fire);
   }
   function later(state, callback, delay) {
     const timer = setTimeout(() => {
@@ -33,23 +35,26 @@
     state.timers.add(timer);
   }
   function play(state, element, frames, options) {
-    const animation = element.animate(frames, {fill:'both', ...options});
+    const speed = state.inline ? state.duration / 4100 : 1;
+    const animation = element.animate(frames, {fill:'both', ...options, duration:options.duration * speed, delay:(options.delay || 0) * speed});
     state.animations.add(animation);
     animation.finished.catch(() => {});
   }
   function burst(state) {
-    if (current !== state || !state.panel.open || !state.egg.isConnected || state.button.disabled) return;
+    if (current !== state || !state.panel.open || !state.egg.isConnected || state.button?.disabled) return;
     stop(state);
     state.egg.classList.remove('party-has-burst');
     void state.egg.offsetWidth;
     state.egg.classList.add('party-has-burst');
-    state.panel.querySelector('.kinder-reveal--party').classList.add('party-has-celebrated');
+    state.panel.querySelector('.kinder-reveal--party')?.classList.add('party-has-celebrated');
     const name = typeof window.BIRTHDAY?.name === 'string' ? window.BIRTHDAY.name : 'Tahreem';
-    state.status.textContent = `Surprise! Happy birthday, ${name}! ✿`;
+    if (state.status) state.status.textContent = `Surprise! Happy birthday, ${name}! ✿`;
     if (!allowed()) return;
 
-    state.button.disabled = true;
-    state.button.setAttribute('aria-busy','true');
+    if (state.button) {
+      state.button.disabled = true;
+      state.button.setAttribute('aria-busy','true');
+    }
     const box = state.egg.getBoundingClientRect();
     const width = innerWidth, height = innerHeight, cx = box.left+box.width/2, cy = box.top+box.height/2;
     const layer = document.createElement('div');
@@ -99,7 +104,7 @@
     // The fallback keeps the overlay fixed by shaking the dialog's contents instead.
     const targets = topLayer ? [state.panel] : [...state.panel.children].filter(node=>node!==layer);
     targets.forEach(node=>play(state,node,frames,{duration:660,easing:'linear'}));
-    later(state,()=>stop(state),4100);
+    later(state,()=>stop(state),state.duration || 4100);
   }
   function mount(panel, auto = true) {
     cancel();
@@ -117,5 +122,13 @@
   window.addEventListener('resize',settle); window.addEventListener('pagehide',cancel);
   new MutationObserver(()=>{if(!allowed())settle();}).observe(document.body,{attributes:true,attributeFilter:['class']});
   document.getElementById('experience-dialog')?.addEventListener('close',cancel);
-  window.GardenPartyBomb = {mount,cancel};
+  // The last egg can set off the same celebration at egg 4 without leaving the bouquet.
+  function burstAt(panel, egg, duration = 1150) {
+    cancel();
+    if (!panel?.open || !egg?.isConnected) return;
+    current = {panel,egg,button:null,status:null,fire:null,inline:true,duration,
+      timers:new Set(),animations:new Set(),layer:null};
+    burst(current);
+  }
+  window.GardenPartyBomb = {mount,cancel,burstAt};
 })();

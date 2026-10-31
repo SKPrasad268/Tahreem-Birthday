@@ -8,7 +8,7 @@ These are the seven recommendations to guide future improvements. They are ideas
 
 3. **Make the bouquet reveal more magical.** Let the ribbon untie, the box lid lift, and the bouquet rise into view with a brief shower of petals. A small tag could read “Picked a little differently, just for you.”
 
-4. **Personalise the Kinder Joys.** Five eggs now contain the Drama Queen certificate, seven traits, first childhood-photo reveal, celebration bomb, and second childhood photo. The voice note and comic have been dropped; the remaining two eggs await final additions.
+4. **Personalise the Kinder Joys.** All seven eggs now contain the Drama Queen certificate, seven traits, first childhood-photo reveal, celebration bomb, second childhood photo, Tahreem-Mon meme, and seven-second moonwalking stickman finale. The voice note and comic have been dropped.
 
 5. **Use her favourite flower throughout.** Once confirmed, repeat it in the garden, Album decorations, and letter stationery. Her confirmed age could appear on the birthday cake.
 
@@ -23,7 +23,8 @@ These are the seven recommendations to guide future improvements. They are ideas
 - Egg 3: the first childhood photo and “Kya matlab khud choti reh gyi” behind a reveal button.
 - Egg 4: a screen-filling floral celebration bomb with a replay button.
 - Egg 5: the second childhood photo, titled “Hai koi mujhse tej..?”.
-- Eggs 6–7: reserved for final additions. The voice note and comic have been dropped.
+- Egg 6 (added 1 November): the Tahreem-Mon silhouette and two-clip audio reveal.
+- Egg 7 (added 1 November): a seven-second moonwalk with boot sparks, flips around the bouquet, and an egg-4 explosion that throws the dancer off-screen. Tap again to replay. The voice note and comic have been dropped.
 
 ## Earlier asset snapshot — 30 October 2026
 

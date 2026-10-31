@@ -1,0 +1,16 @@
+/* A transparent stage above the bouquet; all of its controls remain usable. */
+.moonwalk-layer{position:fixed;inset:0;margin:0;padding:0;border:0;width:100vw;height:100vh;height:100svh;max-width:none;max-height:none;overflow:hidden;background:transparent;pointer-events:none!important;z-index:1100;contain:strict}
+.moonwalk-layer::backdrop{background:transparent;pointer-events:none}
+.moonwalk-layer *{pointer-events:none!important}
+.moonwalk-stage{display:block;width:100%;height:100%;overflow:visible}
+.moonwalk-actor{filter:drop-shadow(0 1px 1px #fff8ef) drop-shadow(0 3px 3px #62464e35)}
+.moonwalk-body{fill:none;stroke:#292332;stroke-width:5.5;stroke-linecap:round;stroke-linejoin:round}
+.moonwalk-boot{fill:#27212d;stroke:#15131b;stroke-width:1.2}
+.moonwalk-sock{stroke:#fff9f0;stroke-width:6;stroke-linecap:butt}
+.moonwalk-glove{fill:#fffdf1;stroke:#706670;stroke-width:1.2}
+.moonwalk-spark{stroke-linecap:round;fill:none}
+.moonwalk-boom{font:900 italic 42px/1 Impact,'Arial Black',sans-serif;fill:#ffe9a0;stroke:#963c50;stroke-width:6;paint-order:stroke;letter-spacing:2px;text-anchor:middle}
+.moonwalk-running .kinder-egg-piece{animation-play-state:paused!important}
+.moonwalk-running [data-bouquet-replay]{opacity:.55}
+.moonwalk-bomb-target{filter:drop-shadow(0 0 6px #ffb649)}
+.moonwalk-still-note{position:absolute;inset:auto 12px 10px;padding:10px 14px;border:1px solid #d8b09a;border-radius:12px;background:#fff6e8;color:#945772;font:italic 15px/1.4 var(--serif);box-shadow:0 5px 20px #73455220;text-align:center;z-index:5;pointer-events:none}

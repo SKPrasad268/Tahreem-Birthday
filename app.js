@@ -185,7 +185,7 @@
       const media = !src ? photoPlaceholder() : isVideo
         ? `<video id="album-video" src="${escape(src)}" aria-label="${escape(caption)}" playsinline autoplay controls preload="auto">Your browser does not support this video.</video>`
         : `<img src="${escape(src)}" alt="${escape(text(item.alt, caption))}" decoding="async">`;
-      dialogTitle.textContent = 'The Album';
+      dialogTitle.textContent = 'The Album 📸✨';
       dialogSubtitle.textContent = 'The birthday girl, in every frame.';
       dialogBody.innerHTML = `
         <div class="album-spread${isVideo ? ' album-spread-video' : ''}">
@@ -252,12 +252,12 @@
       window.GardenStory?.cancel();
       window.GardenReading?.cancel();
       if (window.GardenNakhre && Array.isArray(source.nakhrePages) && source.nakhrePages.length) {
-        dialogTitle.textContent = 'Nakhre';
+        dialogTitle.textContent = 'Nakhre 💅😌';
         dialogSubtitle.textContent = 'THE TAHREEM ARCHIVES · BIRTHDAY EDITION';
         window.GardenNakhre.mount(dialogBody, source.nakhrePages, source.voting || {}, source.privateAlbum || {});
         return;
       }
-      dialogTitle.textContent = 'Nakhre';
+      dialogTitle.textContent = 'Nakhre 💅😌';
       dialogSubtitle.textContent = 'The very special Tahreem edition.';
       const cards = data.nakhre.length ? data.nakhre : [{title: 'A little sparkle', subtitle: 'A few words, just for you', body: 'Your personality deserves its own birthday edition.'}];
       dialogBody.innerHTML = `<div class="nakhre-intro"><span class="issue-stamp">THE ${escape(data.name.toUpperCase())} EDITION</span><p>Little quirks. Big personality. Tap a card for a little note.</p></div><div class="nakhre-grid">${cards.map((card, index) => {
@@ -292,6 +292,14 @@
     let giftOrigin = null;
 
     function travelToGift(next, button) {
+      window.GardenMoonwalk?.cancel();
+      if (next === 'kinder-7' && source.kinderSurprises?.some(item => item.id === next && item.kind === 'moonwalk') && window.GardenMoonwalk) {
+        window.GardenStory?.cancel();
+        window.GardenGiftMagic?.cancel();
+        window.GardenSurpriseMotion?.cancel();
+        window.GardenMoonwalk.play(experience, button);
+        return;
+      }
       const fromTrail = button.classList.contains('discovery-bloom');
       const selector = button.dataset.kinder
         ? `${fromTrail ? '.discovery-bloom' : button.classList.contains('kinder-tap') ? '.kinder-tap' : '.kinder-picker button'}[data-kinder="${next}"]`
@@ -367,6 +375,18 @@
     function renderKinder(id) {
       const index = Math.max(0,kinderRegions.findIndex((_,i)=>`kinder-${i+1}`===id));
       const surprise = list(source.kinderSurprises).find(item=>item.id===id) || {};
+      if (surprise.kind === 'pokemon' && window.GardenPokemon) {
+        dialogTitle.textContent = text(surprise.title, 'Ye konsa Pokemon hai...');
+        dialogSubtitle.textContent = 'A mystery inside Kinder Joy 6.';
+        dialogBody.innerHTML = `${giftBack()}${window.GardenPokemon.markup({
+          ...surprise, image:photoSource(surprise.image), backdrop:photoSource(surprise.backdrop),
+          questionAudio:photoSource(surprise.questionAudio), revealAudio:photoSource(surprise.revealAudio)
+        })}`;
+        window.GardenPokemon.mount(experience, surprise);
+        experience.scrollTop = 0;
+        attachGiftBack();
+        return;
+      }
       const kind = ['award', 'traits', 'childhood', 'sticker', 'party'].includes(surprise.kind) ? surprise.kind : 'message';
       const keepsake = ['award', 'traits', 'childhood'].includes(kind);
       dialogTitle.textContent = text(surprise.title,`Surprise ${index+1}`);
@@ -400,6 +420,7 @@
 
     function attachGiftBack() {
       dialogBody.querySelector('#gift-back')?.addEventListener('click', () => {
+        window.GardenPokemon?.cancel();
         const origin = giftOrigin;
         const destination = () => dialogBody.querySelector(origin?.selector || '[data-gift]');
         const render = () => {
@@ -417,12 +438,14 @@
 
     function renderGift() {
       cancelClosing();
+      window.GardenMoonwalk?.cancel();
+      window.GardenPokemon?.cancel();
       window.GardenPartyBomb?.cancel();
       window.GardenCakePerformance?.cancel();
       window.GardenStory?.cancel();
       window.GardenReading?.cancel();
       kinderObserver?.disconnect();
-      dialogTitle.textContent = 'Your Surprise';
+      dialogTitle.textContent = 'Your Surprise 🎁✨';
       dialogSubtitle.textContent = 'A bouquet of flowers & a little sweetness.';
       if (activeGift === 'letter') return renderLetter();
       if (activeGift === 'notes') return renderNotes();
@@ -430,23 +453,24 @@
       if (/^kinder-[1-7]$/.test(activeGift || '')) return renderKinder(activeGift);
       dialogBody.innerHTML = `<section class="bouquet-surprise" aria-label="Your Kinder Joy and rose bouquet">
         <figure class="bouquet-portrait"><div class="bouquet-halo" aria-hidden="true"></div><div class="bouquet-interactive"><img class="surprise-bouquet" src="assets/surprise-bouquet.webp" width="1024" height="1536" alt="A large bouquet of Kinder Joy eggs nestled among pink and red roses, wrapped in blush pink paper and tied with a satin ribbon." decoding="async">${kinderButtons()}<span class="bouquet-paper-tag">For you,<br><em>${escape(data.name)}</em><span aria-hidden="true"> ✿</span></span></div><figcaption>Tap a wiggling Kinder Joy — there’s a little surprise inside.</figcaption><div class="kinder-picker" role="group" aria-label="Choose a Kinder Joy surprise">${kinderRegions.map((_,index)=>`<button type="button" data-kinder="kinder-${index+1}" aria-label="Open Kinder Joy surprise ${index+1}"><span aria-hidden="true">${index+1}</span></button>`).join('')}</div></figure>
-        <div class="bouquet-copy"><p class="eyebrow">A little something, just for you</p><h3>For you,<br> <em>${escape(data.name)}.</em></h3><p class="bouquet-message">A little sweetness, a lot of flowers, and a whole bouquet of birthday wishes.</p><button class="bouquet-replay" type="button" data-bouquet-replay><span aria-hidden="true">↻</span> Replay the magic</button><p class="sr-only" role="status" data-bouquet-status>Your bouquet is ready. Pick a little surprise.</p><div class="gift-menu bouquet-gifts">
-        <button class="gift-option" type="button" data-gift="letter"><span class="gift-option-icon" aria-hidden="true">✉</span><span class="gift-option-copy"><span class="gift-option-title">A letter for you</span><span>Birthday wishes for the year ahead.</span></span><span aria-hidden="true">↗</span></button>
-        <button class="gift-option" type="button" data-gift="notes"><span class="gift-option-icon" aria-hidden="true">✿</span><span class="gift-option-copy"><span class="gift-option-title">Open when…</span><span>Little notes for another day.</span></span><span aria-hidden="true">↗</span></button>
-        <button class="gift-option" type="button" data-gift="cake"><span class="gift-option-icon" aria-hidden="true">✧</span><span class="gift-option-copy"><span class="gift-option-title">Make a wish</span><span>A sweet sixteen wish awaits.</span></span><span aria-hidden="true">↗</span></button>
+        <div class="bouquet-copy"><p class="eyebrow">A little something, just for you</p><h3>For you,<br> <em>${escape(data.name)}.</em> 💐</h3><p class="bouquet-message">A little sweetness, a lot of flowers, and a whole bouquet of birthday wishes.</p><button class="bouquet-replay" type="button" data-bouquet-replay><span aria-hidden="true">↻</span> Replay the magic</button><p class="sr-only" role="status" data-bouquet-status>Your bouquet is ready. Pick a little surprise.</p><div class="gift-menu bouquet-gifts">
+        <button class="gift-option" type="button" data-gift="letter"><span class="gift-option-icon" aria-hidden="true">✉</span><span class="gift-option-copy"><span class="gift-option-title">A letter for you ✉️</span><span>Birthday wishes for the year ahead.</span></span><span aria-hidden="true">↗</span></button>
+        <button class="gift-option" type="button" data-gift="notes"><span class="gift-option-icon" aria-hidden="true">✿</span><span class="gift-option-copy"><span class="gift-option-title">Open when… 🌷</span><span>Little notes for another day.</span></span><span aria-hidden="true">↗</span></button>
+        <button class="gift-option" type="button" data-gift="cake"><span class="gift-option-icon" aria-hidden="true">✧</span><span class="gift-option-copy"><span class="gift-option-title">Make a wish 🌠</span><span>A sweet sixteen wish awaits.</span></span><span aria-hidden="true">↗</span></button>
       </div></div></section>`;
       dialogBody.querySelector('.kinder-picker')?.insertAdjacentHTML('afterend', window.GardenDiscovery?.markup() || '');
       if (experience) experience.scrollTop = 0;
       attachKinder();
       window.GardenGiftMagic?.prepare(dialogBody, kinderRegions);
       window.GardenSurpriseMotion?.decorate(dialogBody);
+      window.GardenPokemon?.prepare(source.kinderSurprises);
       dialogBody.querySelectorAll('[data-gift]').forEach(button => button.addEventListener('click', () => {
         travelToGift(button.dataset.gift, button);
       }));
     }
 
     function renderLetter() {
-      dialogTitle.textContent = 'A letter for you';
+      dialogTitle.textContent = 'A letter for you ✉️🌷';
       dialogSubtitle.textContent = 'Something you can always come back to.';
       const paragraphs = Array.isArray(data.letter.paragraphs) ? data.letter.paragraphs.filter(item => typeof item === 'string' && item.trim()) : [];
       dialogBody.innerHTML = `${giftBack()}<article class="letter-paper"><p class="eyebrow">FOR ${escape(data.name.toUpperCase())}</p><h3>${escape(text(data.letter.title, `Happy birthday, ${data.name}.`))}</h3>${(paragraphs.length ? paragraphs : ['Wishing you a birthday full of little joys, lovely company, and a year with plenty to look forward to.']).map(paragraph => `<p>${escape(paragraph)}</p>`).join('')}<p class="letter-signature">With lots of birthday wishes,<br>${escape(data.sender)}</p></article>`;
@@ -458,7 +482,7 @@
     function renderNotes(index = null, origin = null) {
       cancelClosing();
       window.GardenReading?.cancel();
-      dialogTitle.textContent = 'Open when…';
+      dialogTitle.textContent = 'Open when… 🌷✨';
       dialogSubtitle.textContent = 'A little encouragement, whenever you need it.';
       const notes = data.openWhen.length ? data.openWhen : [{title: 'You need a little smile', body: 'Here is a little reminder: you deserve kindness, rest, and lovely days ahead.'}];
       const moods = ['low', 'smile', 'win'];
@@ -482,9 +506,9 @@
     }
 
     function renderCake() {
-      dialogTitle.textContent = 'Sweet sixteen';
+      dialogTitle.textContent = 'Sweet sixteen 🎂🥳';
       dialogSubtitle.textContent = 'Chocolate, berries & a sweet sixteen wish.';
-      dialogBody.innerHTML = `${giftBack()}<div class="cake-scene"><div class="cake-layout"><div class="cake-theatre${candleOut ? ' is-out' : ''}" data-cake-phase="ready" role="img" aria-label="Glossy three-tier chocolate and berry cake with ${candleOut ? 'unlit' : 'lit'} number-16 candles and a tiny birthday helper.">${window.GardenCakeArt?.cakeSvg() || ''}${window.GardenCakeCharacter?.markup() || ''}</div><div class="cake-invitation"><p class="eyebrow">SWEET SIXTEEN · IT’S YOUR DAY</p><h3 class="cake-message">${candleOut ? `Happy 16th birthday, ${escape(data.name)}!` : 'Sweet sixteen.<br>Make a wish.'}</h3><p class="cake-flavour-note">Glossy ganache, berry cream<br>& a little birthday magic.</p><button id="blow-candles" type="button"${candleOut ? ' disabled' : ''}>${candleOut ? 'Your wish is on its way ✿' : 'Blow candels'}</button><p class="wish-result" aria-live="polite">${candleOut ? 'Here’s to your next year of wins.' : 'Make your wish, then let the tiny helper take it from here.'}</p><button class="cake-replay" id="cake-replay" type="button"${candleOut ? '' : ' hidden'}>Watch her again ↻</button></div></div></div><div class="wish-cards"${candleOut ? '' : ' hidden'}>${data.wishes.map(wish => `<article class="wish-card"><h3>${escape(text(wish.title, 'A birthday wish'))}</h3><p>${escape(text(wish.body))}</p></article>`).join('')}</div>`;
+      dialogBody.innerHTML = `${giftBack()}<div class="cake-scene"><div class="cake-layout"><div class="cake-theatre${candleOut ? ' is-out' : ''}" data-cake-phase="ready" role="img" aria-label="Glossy three-tier chocolate and berry cake with ${candleOut ? 'unlit' : 'lit'} number-16 candles and a tiny birthday helper.">${window.GardenCakeArt?.cakeSvg() || ''}${window.GardenCakeCharacter?.markup() || ''}</div><div class="cake-invitation"><p class="eyebrow">SWEET SIXTEEN · IT’S YOUR DAY</p><h3 class="cake-message">${candleOut ? `Happy 16th birthday, ${escape(data.name)}! 🎂🥳` : 'Sweet sixteen. 🎂<br>Make a wish. 🌠'}</h3><p class="cake-flavour-note">Glossy ganache, berry cream<br>& a little birthday magic.</p><button id="blow-candles" type="button"${candleOut ? ' disabled' : ''}>${candleOut ? 'Your wish is on its way ✿' : 'Blow candels'}</button><p class="wish-result" aria-live="polite">${candleOut ? 'Here’s to your next year of wins.' : 'Make your wish, then let the tiny helper take it from here.'}</p><button class="cake-replay" id="cake-replay" type="button"${candleOut ? '' : ' hidden'}>Watch her again ↻</button></div></div></div><div class="wish-cards"${candleOut ? '' : ' hidden'}>${data.wishes.map(wish => `<article class="wish-card"><h3>${escape(text(wish.title, 'A birthday wish'))}</h3><p>${escape(text(wish.body))}</p></article>`).join('')}</div>`;
       attachGiftBack();
       const scene = dialogBody.querySelector('.cake-theatre');
       const button = dialogBody.querySelector('#blow-candles');
@@ -507,7 +531,7 @@
           candleOut = true;
           cakeArt?.classList.add('is-out');
           scene.setAttribute('aria-label', 'Sweet sixteen chocolate cake. The tiny helper has blown out both number-16 candles.');
-          dialogBody.querySelector('.cake-message').textContent = `Happy 16th birthday, ${data.name}!`;
+          dialogBody.querySelector('.cake-message').textContent = `Happy 16th birthday, ${data.name}! 🎂🥳`;
           dialogBody.querySelector('.wish-cards').hidden = false;
           result.textContent = 'Whooosh! Your wish is on its way…';
           window.GardenReading?.enhance('cake');
@@ -592,6 +616,8 @@
     function closeExperience() {
       if (!experience?.open || experienceClosing) return;
       experienceClosing = true;
+      window.GardenMoonwalk?.cancel();
+      window.GardenPokemon?.cancel();
       window.GardenPartyBomb?.cancel();
       window.GardenSurpriseMotion?.cancel();
       window.GardenReading?.cancel();
