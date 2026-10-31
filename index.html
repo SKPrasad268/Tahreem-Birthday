@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#efc7cf">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A little birthday garden for Tahreem. Photos, birthday wishes, and a few surprises for the birthday girl.">
+  <meta property="og:title" content="A birthday garden for Tahreem">
+  <meta property="og:description" content="A pink birthday garden celebrating Tahreem. Open her birthday surprises.">
+  <title>Tahreem’s Birthday Garden</title>
+  <link rel="icon" type="image/svg+xml" href="assets/flower.svg">
+  <link rel="preload" as="image" href="assets/garden.webp">
+  <link rel="preload" as="image" href="assets/surprise-bouquet.webp">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tabletop.css">
+  <link rel="stylesheet" href="garden-motion.css">
+  <link rel="stylesheet" href="surprise.css">
+  <link rel="stylesheet" href="album-media.css">
+  <link rel="stylesheet" href="kinder-surprises.css">
+  <link rel="stylesheet" href="radio-player.css">
+  <link rel="stylesheet" href="story-effects.css">
+  <link rel="stylesheet" href="ambient-effects.css">
+  <link rel="stylesheet" href="reading-effects.css">
+  <link rel="stylesheet" href="discovery-trail.css">
+  <link rel="stylesheet" href="cake-art.css">
+  <link rel="stylesheet" href="cake-character.css">
+  <link rel="stylesheet" href="cake-performance.css">
+  <link rel="stylesheet" href="album-scrapbook.css">
+  <link rel="stylesheet" href="nakhre-album.css">
+  <link rel="stylesheet" href="private-album.css">
+  <link rel="stylesheet" href="birthday-magic.css">
+  <link rel="stylesheet" href="book-motion.css">
+  <link rel="stylesheet" href="stationery.css">
+  <link rel="stylesheet" href="turntable-motion.css">
+  <link rel="stylesheet" href="garden-entrance.css">
+  <link rel="stylesheet" href="surprise-motion.css">
+  <link rel="stylesheet" href="kinder-keepsakes.css">
+  <link rel="stylesheet" href="party-bomb.css">
+  <script src="content.js" defer></script>
+  <script src="birthday-magic.js" defer></script>
+  <script src="book-motion.js" defer></script>
+  <script src="turntable-motion.js" defer></script>
+  <script src="story-effects.js" defer></script>
+  <script src="reading-effects.js" defer></script>
+  <script src="discovery-trail.js" defer></script>
+  <script src="cake-art.js" defer></script>
+  <script src="cake-character.js" defer></script>
+  <script src="cake-performance.js" defer></script>
+  <script src="surprise-motion.js" defer></script>
+  <script src="party-bomb.js" defer></script>
+  <script src="nakhre-album.js" defer></script>
+  <script src="private-album-sources.js" defer></script>
+  <script src="private-album.js?v=drive-2" defer></script>
+  <script src="app.js" defer></script>
+  <script src="radio.js" defer></script>
+  <script src="garden-motion.js" defer></script>
+  <script src="garden-entrance.js" defer></script>
+  <script src="ambient-effects.js" defer></script>
+</head>
+<body>
+  <main class="garden-shell" id="garden" aria-label="Tahreem’s birthday garden">
+    <div class="garden-art" aria-hidden="true"></div>
+    <div class="garden-foliage foliage-left" aria-hidden="true"></div>
+    <div class="garden-foliage foliage-right" aria-hidden="true"></div>
+    <div class="garden-foliage foliage-canopy" aria-hidden="true"></div>
+    <div class="garden-haze" aria-hidden="true"></div>
+    <div class="garden-air" id="garden-air" aria-hidden="true"></div>
+    <div class="garden-fireflies" id="garden-fireflies" aria-hidden="true"></div>
+    <header class="garden-header">
+      <a class="garden-wordmark" href="./" aria-label="Back to the birthday garden"><img src="assets/flower.svg" width="26" height="26" alt=""><span>A little celebration</span></a>
+      <div class="garden-tools">
+        <button class="tool-button" id="motion-toggle" type="button" aria-pressed="true" aria-label="Pause the garden breeze"><span aria-hidden="true">❧</span><span data-motion-label>Breeze on</span></button>
+        <button class="tool-button" id="sound-toggle" type="button" aria-pressed="false"><span class="sound-symbol" aria-hidden="true">♪</span><span data-sound-label>Sound off</span></button>
+        <button class="tool-button" id="fullscreen-toggle" type="button" aria-label="Open garden in full screen"><span aria-hidden="true">⛶</span><span>Full screen</span></button>
+      </div>
+    </header>
+
+    <div class="garden-title">
+      <div class="date-ribbon"><span></span><span id="birthday-date">November 1</span><span></span></div>
+      <h1>Happy birthday,<br><em id="garden-name">Tahreem.</em></h1>
+      <p id="flower-caption">A pink garden for the birthday girl.</p>
+    </div>
+
+    <div class="table-scene" aria-label="Your birthday table. Choose an object to open.">
+      <div class="table-shadow" aria-hidden="true"></div>
+      <div class="table-leg table-leg-left" aria-hidden="true"></div>
+      <div class="table-leg table-leg-right" aria-hidden="true"></div>
+      <div class="table-surface" aria-hidden="true"><div class="table-wood"></div></div>
+      <div class="little-vase" aria-hidden="true"><span class="vase-stem"></span><img src="assets/flower.svg" alt=""></div>
+
+      <button class="table-object album-object" data-open="album" type="button" aria-haspopup="dialog" aria-label="Open the Album">
+        <span class="album-book object-art" aria-hidden="true">
+          <span class="album-spine"></span><span class="album-cover-photo"><img src="assets/flower.svg" alt=""><span>Tahreem’s edit</span></span>
+          <span class="album-cover-title">Album</span><span class="album-cover-subtitle">a collection of you</span><span class="book-corner"></span>
+        </span>
+        <span class="object-caption"><strong>The Album</strong><span>A celebration of Tahreem <span aria-hidden="true">↗</span></span></span>
+      </button>
+
+      <button class="table-object gift-object" data-open="gift" type="button" aria-haspopup="dialog" aria-label="Open your surprise gift box">
+        <span class="present object-art" aria-hidden="true"><span class="present-body"></span><span class="present-ribbon"></span><span class="present-lid"></span><span class="bow bow-left"></span><span class="bow bow-right"></span><span class="gift-tag">for you ✿</span></span>
+        <span class="object-caption"><strong>Your Surprise</strong><span>A little birthday magic <span aria-hidden="true">↗</span></span></span>
+      </button>
+
+      <button class="table-object nakhre-object" data-open="nakhre" type="button" aria-haspopup="dialog" aria-label="Open Nakhre">
+        <span class="nakhre-book object-art" aria-hidden="true"><span class="nakhre-edition">THE BIRTHDAY EDITION</span><span class="nakhre-cover-title">Nakhre</span><span class="nakhre-cover-frame"><img src="assets/flower.svg" alt=""><span>a little<br>extra.</span></span><span class="nakhre-cover-footer">A LITTLE EXTRA. ALWAYS ICONIC.</span></span>
+        <span class="object-caption"><strong>Nakhre</strong><span>Because you’re one of a kind <span aria-hidden="true">↗</span></span></span>
+      </button>
+
+      <button class="table-object cake-object" data-open="gift" data-gift-start="cake" type="button" aria-haspopup="dialog" aria-label="Open Tahreem’s sixteenth birthday cake">
+        <span class="three-tier-table-art object-art" id="table-cake-art" aria-hidden="true"></span>
+        <span class="object-caption"><strong>Birthday Cake</strong><span>A sweet sixteen wish <span aria-hidden="true">↗</span></span></span>
+      </button>
+
+      <button class="table-object radio-object" id="radio-toggle" type="button" aria-expanded="false" aria-controls="radio-player" aria-label="Open the birthday radio and play a song">
+        <span class="vintage-radio object-art" aria-hidden="true"><span class="radio-handle"></span><span class="radio-aerial"></span><span class="radio-grille"></span><span class="radio-mini-screen"><span class="radio-mini-label">BIRTHDAY FM</span><span id="radio-mini-title">Your favourites</span><span id="radio-mini-status">tap to tune in</span></span><span class="radio-knob knob-one"></span><span class="radio-knob knob-two"></span><span class="radio-tuning-line"></span><span class="radio-led"></span></span>
+        <span class="object-caption"><strong>The Radio</strong><span>A soundtrack for you <span aria-hidden="true">↗</span></span></span>
+      </button>
+    </div>
+
+    <footer class="garden-footer"><span class="footer-flower" aria-hidden="true">✳</span><p id="garden-status" aria-live="polite">A table full of little surprises. Tap one to begin.</p><span class="footer-flower" aria-hidden="true">✳</span></footer>
+    <div class="garden-dedication">Made with a little pink & a lot of thought.</div>
+  </main>
+
+  <section id="radio-player" class="radio-player" aria-labelledby="radio-panel-title" hidden>
+    <div class="radio-player-heading"><div class="radio-brand"><img src="assets/flower.svg" alt="" width="30" height="30"><div><p class="eyebrow">A LITTLE SOUNDTRACK FOR YOUR DAY</p><h2 id="radio-panel-title">Tahreem ki Radio</h2></div></div><button id="radio-close" type="button" class="close-button" aria-label="Close the radio controls" title="Music keeps playing until you pause">×</button></div>
+    <div class="radio-player-content">
+      <div class="record-column" aria-hidden="true">
+        <div class="record-sleeve"><span class="sleeve-corner sleeve-corner-top"></span><span class="sleeve-corner sleeve-corner-bottom"></span>
+          <div class="vinyl-record" id="radio-record"><div class="record-grooves"></div><div class="record-centre"><img id="radio-cover" src="assets/flower.svg" alt="" hidden><div id="radio-cover-fallback" class="record-label"><span class="record-label-edition">THE BIRTHDAY MIX</span><img src="assets/flower.svg" alt=""><span id="radio-disc-title">Your favourites</span><span id="radio-disc-artist">Just for you</span></div></div><span class="record-pin"></span><span class="record-sheen"></span></div>
+          <span class="record-tonearm"><span></span></span><span class="record-sticker">Birthday girl FM ✿</span>
+        </div>
+        <div class="record-caption"><span class="record-caption-line"></span><span>GOOD SONGS. TAHREEM’S BIRTHDAY MIX.</span><span class="record-caption-line"></span></div>
+      </div>
+      <div class="radio-player-info">
+        <div class="radio-track-meta"><span class="radio-state"><span class="radio-state-dot" aria-hidden="true"></span><span id="radio-state-label">Ready to play</span></span><span id="radio-track-index" class="radio-track-index">01 / 17</span></div>
+        <h3 id="radio-title">Your favourite songs</h3><p id="radio-artist">A soundtrack for your garden</p>
+        <p id="radio-description" class="radio-description">A little soundtrack for your birthday garden.</p>
+        <div class="radio-seek"><input id="radio-progress" type="range" min="0" max="100" step="0.1" value="0" aria-label="Song position"><div><span id="radio-time">0:00</span><span id="radio-duration">0:00</span></div></div>
+        <div class="radio-transport" aria-label="Song controls"><button id="radio-shuffle" class="radio-secondary-control" type="button" aria-label="Shuffle songs" aria-pressed="false"><span aria-hidden="true">⤨</span></button><button id="radio-prev" type="button" aria-label="Previous song">&#9198;</button><button id="radio-play" type="button" aria-label="Play song" aria-pressed="false"><span data-radio-play-symbol>&#9654;</span></button><button id="radio-next" type="button" aria-label="Next song">&#9197;</button><button id="radio-repeat" class="radio-secondary-control radio-repeat-control" type="button" aria-label="Repeat all songs" aria-pressed="true"><span aria-hidden="true">↻</span><span data-repeat-label>Repeat all</span></button></div>
+        <div class="radio-bottom-controls"><div class="radio-volume-control"><button id="radio-mute" type="button" aria-label="Mute music" aria-pressed="false"><span data-volume-symbol aria-hidden="true">♬</span></button><input id="radio-volume" type="range" min="0" max="100" value="75" aria-label="Music volume"><output id="radio-volume-value" for="radio-volume">75%</output></div><button id="radio-playlist-toggle" class="radio-playlist-toggle" type="button" aria-expanded="false" aria-controls="radio-playlist"><span aria-hidden="true">☷</span> Playlist</button></div>
+        <p id="radio-status" class="radio-status" aria-live="polite">Tap play to tune in.</p>
+        <div id="radio-import-area" hidden><button id="radio-pick-files" type="button" class="back-link">Choose songs</button><input id="radio-files" type="file" accept="audio/*" multiple hidden></div>
+      </div>
+    </div>
+    <ol id="radio-playlist" class="radio-playlist" aria-label="Your song collection" hidden></ol>
+    <div class="radio-window-footer"><img src="assets/flower.svg" alt="" width="15" height="15"><span>Keep exploring. Your music comes with you.</span><img src="assets/flower.svg" alt="" width="15" height="15"></div>
+  </section>
+  <audio id="radio-audio" preload="metadata"></audio>
+
+  <dialog id="welcome-dialog" class="welcome-dialog" aria-labelledby="welcome-title" aria-describedby="welcome-intro">
+    <div class="welcome-card">
+      <div class="welcome-date"><span>01</span><span>NOVEMBER</span></div>
+      <div class="wax-seal" aria-hidden="true"><img src="assets/flower.svg" alt=""></div>
+      <p class="eyebrow">A little something for</p>
+      <h2 id="welcome-title"><span id="welcome-name">Tahreem</span><span class="welcome-comma">,</span></h2>
+      <p class="welcome-line">you are celebrated.</p>
+      <p id="welcome-intro">A pink birthday garden, a little bit of nakhre, and surprises for the birthday girl.</p>
+      <button id="enter-garden" class="primary-button" type="button">Step into your garden <span aria-hidden="true">↗</span></button>
+      <p class="welcome-footnote">Take your time. This little world is yours.</p>
+    </div>
+  </dialog>
+
+  <dialog id="experience-dialog" class="experience-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-subtitle">
+    <div class="dialog-header"><div><p class="eyebrow" id="dialog-subtitle">A little birthday something</p><h2 id="dialog-title">Your surprise</h2></div><button id="close-dialog" class="close-button" type="button" aria-label="Close and return to the garden">×</button></div>
+    <div id="dialog-body" class="dialog-body"></div>
+    <div class="dialog-footnote">A little piece of your birthday garden.</div>
+  </dialog>
+
+  <section class="rotate-overlay" id="rotate-overlay" aria-label="Turn your phone to landscape">
+    <img src="assets/flower.svg" class="rotate-flower" alt="">
+    <div class="rotate-phone" aria-hidden="true"><span>✿</span></div>
+    <p class="eyebrow">A little more room for the magic</p>
+    <h2>This garden grows<br><em>sideways.</em></h2>
+    <p>Turn your phone to landscape<br>to open your birthday surprise.</p>
+    <button class="primary-button" id="try-landscape" type="button">Open in landscape <span aria-hidden="true">↗</span></button>
+    <p id="orientation-status" class="orientation-status" aria-live="polite">If it doesn’t turn, rotate your phone and turn off rotation lock.</p>
+  </section>
+  <div id="petals" class="petals" aria-hidden="true"></div>
+  <noscript><div class="noscript-note">Please enable JavaScript to open Tahreem’s birthday garden.</div></noscript>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* The tree canopy moves independently of the garden table. */
+.garden-foliage{
+  position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background:url('assets/garden.webp') center 62%/cover no-repeat;
+  backface-visibility:hidden;
+}
+.foliage-left{
+  -webkit-mask-image:radial-gradient(ellipse 29% 79% at 0% 18%,#000 35%,#000e 56%,transparent 100%);
+  mask-image:radial-gradient(ellipse 29% 79% at 0% 18%,#000 35%,#000e 56%,transparent 100%);
+  transform-origin:0% 27%;animation:leafy-breeze-left 8.6s ease-in-out infinite;
+}
+.foliage-right{
+  -webkit-mask-image:radial-gradient(ellipse 27% 83% at 100% 22%,#000 36%,#000e 56%,transparent 100%);
+  mask-image:radial-gradient(ellipse 27% 83% at 100% 22%,#000 36%,#000e 56%,transparent 100%);
+  transform-origin:100% 28%;animation:leafy-breeze-right 10.3s ease-in-out -3.1s infinite;
+}
+.foliage-canopy{
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000b 6%,transparent 23%);
+  mask-image:linear-gradient(180deg,#000 0%,#000b 6%,transparent 23%);
+  transform-origin:50% 0%;animation:leafy-breeze-canopy 7.9s ease-in-out -4s infinite;
+}
+.garden-air,.garden-fireflies{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.garden-air{z-index:2;perspective:600px}
+.garden-fireflies{z-index:0}
+.garden-drifter{
+  position:absolute;left:var(--start-x);top:-55px;pointer-events:none;
+  width:var(--size);height:var(--size);
+  opacity:0;animation:garden-drift-down var(--fall-duration) linear var(--fall-delay) infinite;
+}
+.garden-drift-sway{
+  display:block;width:100%;height:100%;
+  animation:garden-drift-sway var(--sway-duration) ease-in-out var(--sway-delay) infinite alternate;
+}
+.garden-drift-shape{
+  display:block;position:relative;width:100%;height:70%;
+  border-radius:72% 12% 65% 30%;
+  background:radial-gradient(ellipse at 30% 25%,#f9d3df,var(--petal-color) 70%);
+  box-shadow:inset 1px 1px 2px #fff3df65,0 1px 2px #653c3415;
+  animation:garden-petal-flutter var(--flutter-duration) ease-in-out var(--sway-delay) infinite;
+}
+.garden-drifter.is-leaf .garden-drift-shape{
+  height:48%;border-radius:5% 90% 5% 90%;
+  background:linear-gradient(28deg,#727f51,var(--petal-color) 50%,#c3c28c);
+}
+.garden-drifter.is-leaf .garden-drift-shape:after{
+  content:'';position:absolute;left:9%;top:50%;width:85%;height:1px;
+  background:#56623780;transform:rotate(19deg);transform-origin:left;
+}
+.garden-firefly{
+  position:absolute;left:var(--start-x);top:var(--start-y);width:3px;height:3px;border-radius:50%;
+  background:#fff3b6;box-shadow:0 0 5px 2px #f9e3a56b,0 0 14px #fce8b645;
+  animation:garden-firefly-glow var(--glow-duration) ease-in-out var(--glow-delay) infinite;
+}
+.little-vase img{transform-origin:50% 120%;animation:vase-flower-breeze 6.8s ease-in-out -2s infinite}
+.garden-motion-paused .garden-foliage,
+.garden-motion-paused .garden-drifter,
+.garden-motion-paused .garden-drift-sway,
+.garden-motion-paused .garden-drift-shape,
+.garden-motion-paused .garden-firefly,
+.garden-motion-paused .little-vase img{animation-play-state:paused}
+.garden-motion-off .garden-air,.garden-motion-off .garden-fireflies{visibility:hidden}
+.garden-motion-off .garden-foliage{visibility:hidden}
+#motion-toggle[aria-pressed="true"]>span:first-child{color:#6e8259}
+@keyframes leafy-breeze-left{
+  0%,100%{transform:translate3d(-1px,0,0) rotate(-.12deg)}
+  32%{transform:translate3d(3px,1px,0) rotate(.22deg)}
+  64%{transform:translate3d(0,-1px,0) rotate(-.08deg)}
+  82%{transform:translate3d(2px,0,0) rotate(.12deg)}
+}
+@keyframes leafy-breeze-right{
+  0%,100%{transform:translate3d(1px,0,0) rotate(.12deg)}
+  40%{transform:translate3d(-3px,1px,0) rotate(-.23deg)}
+  72%{transform:translate3d(0,-1px,0) rotate(.06deg)}
+}
+@keyframes leafy-breeze-canopy{
+  0%,100%{transform:translate3d(-1px,0,0) rotate(-.08deg)}
+  50%{transform:translate3d(2px,2px,0) rotate(.12deg)}
+}
+@keyframes garden-drift-down{
+  0%{opacity:0;transform:translate3d(0,-25px,0)}
+  8%{opacity:var(--drift-opacity)}
+  85%{opacity:var(--drift-opacity)}
+  100%{opacity:0;transform:translate3d(var(--wind-distance),calc(100svh + 110px),0)}
+}
+@keyframes garden-drift-sway{
+  from{transform:translateX(calc(var(--sway-width) * -1)) rotate(-15deg)}
+  to{transform:translateX(var(--sway-width)) rotate(25deg)}
+}
+@keyframes garden-petal-flutter{
+  0%{transform:rotateZ(0deg) rotateY(0deg)}
+  35%{transform:rotateZ(85deg) rotateY(65deg)}
+  70%{transform:rotateZ(185deg) rotateY(-45deg)}
+  100%{transform:rotateZ(360deg) rotateY(0deg)}
+}
+@keyframes garden-firefly-glow{
+  0%,100%{opacity:0;transform:translate3d(0,5px,0)}
+  30%{opacity:.5}
+  55%{opacity:.85;transform:translate3d(15px,-15px,0)}
+  80%{opacity:.15;transform:translate3d(24px,-23px,0)}
+}
+@keyframes vase-flower-breeze{0%,100%{transform:rotate(8deg)}50%{transform:rotate(17deg)}}
+@media(max-height:650px) and (orientation:landscape){
+  .garden-drifter{filter:none}.garden-firefly{width:2px;height:2px}
+}
+@media(max-width:720px) and (orientation:landscape){
+  .garden-tools{gap:6px}.garden-tools .tool-button{min-width:44px;padding:5px 10px}
+  .garden-tools .tool-button>span:not(:first-child){display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .garden-foliage,.garden-air,.garden-fireflies{display:none!important}
+  .little-vase img{animation:none!important;transform:rotate(10deg)}
+}

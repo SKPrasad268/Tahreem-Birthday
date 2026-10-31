@@ -1,0 +1,65 @@
+/* Personal keepsakes inside the same seven eggs. */
+.kinder-reveal--keepsake{grid-template-columns:150px minmax(0,1fr);gap:24px;padding:8px 0 20px;align-items:center}
+.kinder-reveal--keepsake>.kinder-opening{width:150px;height:180px}
+.kinder-reveal--keepsake .kinder-shell-label{font-size:15px}
+.kinder-reveal--keepsake .kinder-shell-label strong{font-size:21px}
+.kinder-reveal--keepsake .kinder-opening-flower{font-size:42px;left:36%}
+.kinder-reveal--keepsake .kinder-half-left{animation-name:keepsake-shell-left}
+.kinder-reveal--keepsake .kinder-half-right{animation-name:keepsake-shell-right}
+.kinder-message--award{padding:0;border:0;background:none;box-shadow:none}
+.kinder-message--award>.kinder-card-seal{display:none}
+.kinder-award{position:relative;isolation:isolate;padding:18px 38px;text-align:center;border:5px double #bd9d6a;border-radius:3px;background:radial-gradient(ellipse at 50% 35%,#fffef5,transparent 65%),repeating-linear-gradient(0deg,#e6cfaa0d 0 1px,transparent 1px 4px),#fbf1de;box-shadow:0 10px 24px #77563913,0 3px 0 #e5d5ba;animation:kinder-certificate-arrive .8s .35s both;transform-origin:50% 15%}
+.kinder-award:before{content:'';position:absolute;inset:7px;border:1px solid #d6bd8d;pointer-events:none;z-index:-1}
+.award-corner{position:absolute;width:22px;height:22px;background:#fbf1de;color:#b58b51;font:24px/1 var(--serif)}
+.corner-top{top:0;left:0}.corner-bottom{right:0;bottom:0;transform:rotate(180deg)}
+.award-kicker{font:500 9px/1.4 var(--sans);letter-spacing:2.7px;color:#9b7a4e;margin:0 0 4px}
+.award-crown{display:block;width:60px;height:37px;margin:0 auto 3px;filter:drop-shadow(0 2px 2px #95713d13)}
+.kinder-award h3{font:400 clamp(25px,2.5vw,33px)/1.15 var(--serif);color:#84623d;letter-spacing:-.4px;margin:0 0 9px}
+.award-presented{font:400 8px/1.4 var(--sans);letter-spacing:2px;color:#9e8570;margin:0 0 2px}
+.award-name{font:italic 44px/1.1 var(--serif);color:#93516d;margin:0 0 9px}
+.award-nickname{display:inline-block;font:italic 18px/1.35 var(--serif);color:#906079;margin:0 0 9px;padding:6px 12px;border-top:1px solid #d8b7b5;border-bottom:1px solid #d8b7b5}
+.award-citation{font:400 14px/1.6 var(--serif);color:#82694f;max-width:380px;margin:0 auto 9px;text-wrap:pretty}
+.award-closing{font:italic 14px/1.5 var(--serif);color:#8d6070;margin:0 auto 10px}
+.award-footer{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;text-align:left;max-width:390px;margin:0 auto}
+.award-signature{display:block;border-bottom:1px solid #c5ac85;padding:4px 0;font:italic 17px/1.3 var(--serif);color:#9a7858}
+.award-date{display:block;margin-top:5px;font:400 8px/1.4 var(--sans);color:#9d8a70;letter-spacing:.25px}
+.award-rosette{position:relative;flex:none;width:60px;height:60px;display:grid;place-items:center;border-radius:50%;background:repeating-conic-gradient(#e0c18a 0 10deg,#f4dfac 10deg 20deg);color:#936c35;filter:drop-shadow(0 2px 2px #8b672c1a)}
+.award-rosette:before,.award-rosette:after{content:'';position:absolute;z-index:-1;top:42px;left:12px;width:19px;height:30px;background:#d4a4b2;clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%);transform:rotate(13deg)}
+.award-rosette:after{left:35px;transform:rotate(-13deg);background:#dfb4bf}
+.award-rosette>span{display:grid;align-content:center;width:51px;height:51px;border:1px solid #c6a067;border-radius:50%;background:#f7e7bf;text-align:center;font:500 10px/1.4 var(--sans);letter-spacing:1px}
+.kinder-message--traits{position:relative;padding:22px 28px;background:repeating-linear-gradient(0deg,transparent 0 27px,#decab41c 27px 28px),#fffaf0}
+.kinder-message--traits>.eyebrow{margin-bottom:9px}
+.kinder-message--traits h3{font-size:27px;line-height:1.2;margin-bottom:15px}
+.kinder-traits{padding:0;margin:0;list-style:none;display:grid;gap:7px}
+.kinder-traits li{display:flex;align-items:flex-start;gap:13px;padding:0 0 6px;border-bottom:1px dashed #dcc5ba}
+.kinder-traits li:last-child{border:0;padding-bottom:0}
+.kinder-trait-number{flex:none;display:grid;place-items:center;width:29px;height:30px;border-radius:45% 49% 47% 43%;background:#eed4dd;color:#a36d86;font:italic 14px/1 var(--serif);transform:rotate(-7deg)}
+.kinder-traits li:nth-child(2n) .kinder-trait-number{background:#e6e9da;color:#7b8868;transform:rotate(6deg)}
+.kinder-traits li:nth-child(3n) .kinder-trait-number{background:#f4e5bf;color:#a38951}
+.kinder-trait-text{padding-top:3px;font:400 15px/1.6 var(--serif);white-space:pre-wrap;overflow-wrap:anywhere;color:#775466}
+.kinder-traits-flower{display:block;text-align:right;margin-top:6px;font:25px/1 var(--serif);color:#b58b9f}
+.kinder-message--childhood{text-align:center;background:radial-gradient(ellipse at 50% 50%,#f5e7db66,transparent 65%),#fffaf1}
+.kinder-message--childhood h3{font-size:29px;line-height:1.2;max-width:450px;margin:0 auto 16px}
+.kinder-childhood-photo{display:table;max-width:95%;padding:9px 9px 7px;background:#fffef8;border:1px solid #e8ddd0;box-shadow:0 6px 16px #6f4d4918;margin:0 auto 19px;transform:rotate(-2deg)}
+.kinder-childhood-photo .kinder-message-image{max-height:220px;max-width:100%;width:auto;border-radius:1px}
+.kinder-childhood-photo figcaption{font:italic 12px/1.4 var(--serif);color:#a17b84;margin:7px 0 0}
+.kinder-reveal-button{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:44px;padding:10px 22px;border:1px solid #c58ca2;border-radius:25px;background:#a26b86;color:#fff8ed;font:400 12px/1.4 var(--sans);box-shadow:0 3px 8px #89546c13;transition:background .2s}
+.kinder-reveal-button:hover{background:#8c5571}
+.kinder-reveal-button>span{font-size:19px}
+.kinder-punchline{font:italic 27px/1.35 var(--serif);color:#965c7a;margin:19px auto 0;padding:16px 12px;border-top:1px dashed #dbb8c7;max-width:430px;animation:kinder-punchline-pop .5s cubic-bezier(.18,.8,.25,1) both}
+@keyframes kinder-certificate-arrive{from{opacity:0;transform:perspective(900px) rotateX(-9deg) translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes kinder-punchline-pop{from{opacity:0;transform:translateY(7px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes keepsake-shell-left{0%,15%{transform:none}40%{transform:translateX(-4px) rotate(-5deg)}100%{transform:translateX(-14px) rotate(-14deg)}}
+@keyframes keepsake-shell-right{0%,15%{transform:none}40%{transform:translateX(4px) rotate(5deg)}100%{transform:translateX(14px) rotate(14deg)}}
+@media(max-height:650px) and (orientation:landscape){
+ .kinder-reveal--keepsake{grid-template-columns:110px minmax(0,1fr);gap:19px;padding:0 0 12px}
+ .kinder-reveal--keepsake>.kinder-opening{width:110px;height:150px}.kinder-reveal--keepsake .kinder-shell-label{font-size:12px}.kinder-reveal--keepsake .kinder-shell-label strong{font-size:17px}
+ .kinder-award{padding:17px 29px 20px}.award-crown{width:56px;height:36px}.award-name{font-size:38px;margin-bottom:8px}.kinder-award h3{font-size:27px;margin-bottom:9px}.award-nickname{font-size:17px;padding:5px 10px;margin-bottom:9px}.award-citation,.award-closing{font-size:13px}.award-rosette{width:56px;height:56px}.award-rosette>span{width:44px;height:44px;font-size:9px}.award-rosette:before,.award-rosette:after{top:37px}
+ .kinder-message--traits{padding:16px 20px}.kinder-message--traits h3,.kinder-message--childhood h3{font-size:25px}.kinder-trait-text{font-size:14px}.kinder-traits{gap:7px}.kinder-traits li{padding-bottom:7px}
+ .kinder-childhood-photo .kinder-message-image{max-height:180px}.kinder-childhood-photo{margin-bottom:14px}.kinder-punchline{font-size:24px;margin-top:13px;padding-top:12px}
+}
+@media(max-width:600px) and (orientation:portrait){.kinder-reveal--keepsake{grid-template-columns:1fr;gap:8px}.kinder-reveal--keepsake>.kinder-opening{height:130px}.kinder-award{padding:20px 23px}.award-name{font-size:39px}.award-footer{gap:10px}.award-signature{font-size:14px}.award-date{font-size:7px}.award-nickname{font-size:17px}.kinder-trait-text{font-size:14px}.kinder-message--traits h3{font-size:26px}}
+.garden-motion-off :is(.kinder-award,.kinder-punchline){animation:none}
+.garden-motion-off .kinder-reveal--keepsake .kinder-half-left{transform:translateX(-14px) rotate(-14deg)}
+.garden-motion-off .kinder-reveal--keepsake .kinder-half-right{transform:translateX(14px) rotate(14deg)}
+@media(prefers-reduced-motion:reduce){.kinder-award,.kinder-punchline{animation:none}.kinder-reveal-button{transition:none}.kinder-reveal--keepsake .kinder-half-left{transform:translateX(-14px) rotate(-14deg)}.kinder-reveal--keepsake .kinder-half-right{transform:translateX(14px) rotate(14deg)}}

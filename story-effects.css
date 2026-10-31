@@ -1,0 +1,9 @@
+/* Motion follows the real objects, with readable final states by default. */
+#experience-dialog{animation:none;transform-origin:center;}
+.album-spread{position:relative;isolation:isolate;}
+.album-turn-sheet{position:absolute!important;z-index:4;margin:0!important;pointer-events:none;overflow:hidden;backface-visibility:hidden;box-shadow:12px 4px 24px #68415130!important;}
+.album-turn-sheet:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#603c4826,transparent 28%,#fff8e728);pointer-events:none;}
+.turn-video-memory{height:min(39svh,340px);display:grid;place-items:center;background:linear-gradient(135deg,#eed6d9,#f9e9da);padding:24px;color:#a26d82;font:italic 21px/1.5 var(--serif);text-align:center;}
+@media(max-height:650px) and (orientation:landscape){.turn-video-memory{height:clamp(120px,38svh,210px);font-size:16px}}
+@media(prefers-reduced-motion:reduce){.album-turn-sheet{display:none!important}}
+.garden-motion-off .album-turn-sheet{display:none!important}

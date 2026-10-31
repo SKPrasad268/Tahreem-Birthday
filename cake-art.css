@@ -1,0 +1,16 @@
+/* Shared artwork stays sharp at table and reading-view sizes. */
+.birthday-cake-art{display:block;width:100%;height:100%;overflow:visible}
+.cake-sixteen-art{filter:drop-shadow(0 7px 5px #60392f20)}
+.cake-number-candle[data-candle-digit="6"] .cake-candle-flame{animation-delay:-.8s}
+.cake-candle-flame{transform-box:fill-box;transform-origin:50% 90%;animation:chocolate-candle-flicker 1.7s ease-in-out infinite alternate}
+.cake-candle:nth-last-child(2) .cake-candle-flame{animation-delay:-.7s}
+.cake-candle:nth-last-child(1) .cake-candle-flame{animation-delay:-1.2s}
+.cake-candle-smoke{opacity:0;transform-box:fill-box;transform-origin:50% 100%}
+.is-out .cake-candle-flame{opacity:0;animation:none}
+.is-out .cake-candle-smoke{animation:chocolate-candle-smoke 1.2s ease-out both}
+.garden-motion-off .cake-candle-flame{animation:none}
+.garden-motion-paused .cake-candle-flame{animation-play-state:paused}
+@keyframes chocolate-candle-flicker{from{transform:rotate(-3deg) scale(.96,1)}to{transform:rotate(4deg) scale(1.04,.94)}}
+@keyframes chocolate-candle-smoke{0%{opacity:0;transform:translateY(0) scale(.7)}15%{opacity:.65}100%{opacity:0;transform:translateY(-18px) scale(1.2)}}
+@media(prefers-reduced-motion:reduce){.cake-candle-flame,.is-out .cake-candle-smoke{animation:none!important}.is-out .cake-candle-smoke{opacity:0}}
+.garden-motion-off .is-out .cake-candle-smoke{animation:none!important;opacity:0}

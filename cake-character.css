@@ -1,0 +1,17 @@
+/* The outer helper is 48 × 60 scene units; the cake is 240 units tall. */
+.cake-helper{position:absolute;pointer-events:none;transform-origin:50% 100%;overflow:visible;z-index:4}
+.cake-helper-girl{display:block;width:100%;height:100%;overflow:visible}
+.cake-helper-blow-mouth,.cake-helper-dizzy-eyes,.cake-helper-dizzy-mouth,.cake-helper-dizzy-stars{display:none}
+.is-blowing .cake-helper-smile{display:none}
+.is-blowing .cake-helper-blow-mouth{display:block}
+.is-blowing .cake-helper-cheek{fill:#e5a2a1;rx:4.4;ry:2.6}
+.is-knocked-out .cake-helper-awake-eyes,.is-knocked-out .cake-helper-smile,.is-knocked-out .cake-helper-blow-mouth{display:none}
+.is-knocked-out .cake-helper-dizzy-eyes,.is-knocked-out .cake-helper-dizzy-mouth,.is-knocked-out .cake-helper-dizzy-stars{display:block}
+.cake-wind{position:absolute;left:79.166667%;top:33.333333%;width:416.666667%;height:66.666667%;transform:translateY(-50%);opacity:0;pointer-events:none}
+.cake-wind svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 1px 1px #6f8b7738)}
+.is-blowing .cake-wind{opacity:1}
+.is-knocked-out .cake-helper-dizzy-stars{animation:cake-dizzy-twinkle 1.5s ease-in-out infinite alternate;transform-origin:50% 35%}
+@keyframes cake-dizzy-twinkle{from{opacity:.65;transform:rotate(-3deg)}to{opacity:1;transform:rotate(3deg)}}
+.garden-motion-off .cake-helper-dizzy-stars{animation:none!important}
+.garden-motion-paused .cake-helper-dizzy-stars{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.cake-helper-dizzy-stars{animation:none!important}}

@@ -1,0 +1,96 @@
+/* A wide oak birthday table, with five little things to explore. */
+.table-scene{width:min(1180px,91vw);top:47%;height:43%;min-height:250px;max-height:390px}
+.table-surface{top:20%;height:63%;background:#ae7c52;box-shadow:0 13px 0 #b58960,0 17px 0 #996b49,0 23px 30px #53382535}
+.table-wood{position:absolute;inset:0;border-radius:50%;background-color:#dfb68a;background-image:repeating-linear-gradient(0deg,transparent 0 37px,#9b683923 38px,#f5d6ac80 40px,transparent 42px),repeating-linear-gradient(2deg,#b8875333 0 1px,transparent 1px 6px,#efcea055 7px,transparent 8px 16px),radial-gradient(ellipse at 22% 38%,#f7d9af80,transparent 55%),linear-gradient(105deg,#dbb080,#edcba2 49%,#d4a578);border:4px solid #efd0a3;box-shadow:inset 0 -10px 18px #ae795230,inset 0 3px 4px #fff0ce80}
+.table-wood:after{content:'';position:absolute;inset:8px;border-radius:50%;border:1px solid #bc8d582e}
+.table-leg{background:linear-gradient(90deg,#b58a60,#e2bb8b 45%,#c09265);top:55%;height:43%;width:4%}
+.table-leg-left{left:17%}.table-leg-right{right:17%}
+.little-vase{left:49%;top:9%;transform:scale(.7);transform-origin:bottom}
+.table-object{width:18%;height:auto;top:0}
+.album-object{left:1%;transform:rotate(-7deg)}
+.nakhre-object{left:21%;right:auto;transform:rotate(6deg)}
+.gift-object{left:41%;top:5%}
+.pastry-object{left:61%;top:13%}
+.radio-object{left:81%;top:12%}
+.album-book,.nakhre-book{height:clamp(125px,13vw,195px)}
+.present{width:clamp(115px,12vw,185px);height:clamp(120px,12vw,185px)}
+.object-caption{margin-top:20px}
+.object-caption strong{font-size:clamp(16px,1.45vw,22px);padding:6px 14px}
+.object-caption>span{font-size:clamp(9px,.73vw,11px)}
+.album-object .object-caption{transform:rotate(7deg)}
+.nakhre-object .object-caption{transform:rotate(-6deg)}
+
+/* A layered chocolate pastry, whipped cream, and a glossy cherry. */
+.pastry-art{position:relative;width:clamp(125px,13.4vw,205px);height:clamp(113px,12.2vw,186px)}
+.pastry-plate{position:absolute;left:0;bottom:3%;width:100%;height:37%;border-radius:50%;background:radial-gradient(ellipse,#fffaf0 0 45%,#ead9c1 48%,#fff9e8 52% 66%,#d9bda0 69%,#fff1dc 72%);box-shadow:0 8px 5px #67422525}
+.chocolate-pastry{position:absolute;left:20%;top:33%;width:63%;height:46%;transform:skewY(-6deg);border-radius:4px 6px 3px 3px;background:linear-gradient(0deg,#75432c 0 17%,#b88154 18% 26%,#502919 27% 46%,#c28b62 47% 55%,#623520 56% 78%,#3e2018 79%);box-shadow:inset -12px 0 0 #2e160d30,5px 7px 5px #3e231e2b}
+.chocolate-pastry:after{content:'';position:absolute;inset:5px 0;background:radial-gradient(ellipse,#32180d70 0 1px,transparent 2px) 0 0/9px 7px;opacity:.45;pointer-events:none}
+.chocolate-glaze{position:absolute;z-index:1;top:-14%;left:0;width:100%;height:30%;border-radius:8px 8px 5px 5px;background:linear-gradient(170deg,#9c6644,#5e3121 40%,#482116);box-shadow:0 3px 0 #3e1f16}
+.chocolate-glaze:after{content:'';position:absolute;top:65%;left:12%;height:21px;width:8px;background:#492318;border-radius:0 0 5px 5px;box-shadow:31px -7px 0 0 #492318,58px -10px 0 1px #492318}
+.cream-swirl{position:absolute;z-index:2;left:32%;top:-34%;width:37%;height:36%;border-radius:50% 50% 30% 30%;background:linear-gradient(0deg,#f1dfc6 18%,#fff5e3 19% 41%,#e5ceae 42% 48%,#fff9e8 49%);transform:skewY(6deg);box-shadow:0 3px 2px #41251720}
+.cream-swirl:before{content:'';position:absolute;left:20%;top:-35%;width:62%;height:70%;border-radius:70% 10% 50% 20%;background:linear-gradient(120deg,#fff9e9,#edd8bc);transform:rotate(-15deg)}
+.pastry-cherry{position:absolute;z-index:4;top:-52%;left:44%;width:18%;aspect-ratio:1;border-radius:48% 46% 48% 48%;background:radial-gradient(circle at 32% 25%,#f2a5a0 0 5%,#cf4c4b 15%,#8b1e29 67%,#6e1d28);box-shadow:1px 3px 2px #39211f33;transform:skewY(6deg)}
+.pastry-cherry>span{position:absolute;width:70%;height:110%;bottom:86%;left:48%;border-left:2px solid #697347;border-top:2px solid #697347;border-radius:70% 0 0 0;transform:rotate(15deg)}
+.chocolate-crumb{position:absolute;z-index:3;bottom:15%;width:5px;height:4px;background:#633923;transform:rotate(15deg);border-radius:1px}
+.crumb-one{left:19%}.crumb-two{left:79%;bottom:20%;width:4px;height:3px}
+.pastry-object .object-caption{margin-top:11px}
+
+/* The radio itself stays small; its player gives song names room to breathe. */
+.vintage-radio{position:relative;width:clamp(128px,14vw,212px);height:clamp(103px,10.8vw,165px);background:linear-gradient(115deg,#f6e1c9,#e9c7a6);border:8px solid #bc8b68;border-radius:18px 18px 11px 11px;box-shadow:inset 0 0 0 2px #fff1d578,0 5px 0 #946a50;transform:rotate(-3deg)}
+.radio-handle{position:absolute;left:21%;bottom:calc(100% + 7px);width:60%;height:21%;border:7px solid #926247;border-bottom:0;border-radius:17px 17px 0 0;box-shadow:inset 2px 2px 1px #dfbd9c}
+.radio-aerial{position:absolute;bottom:calc(100% + 4px);right:9%;width:3px;height:65%;background:linear-gradient(90deg,#a69b8c,#fff4dc,#b5a48d);transform:rotate(20deg);transform-origin:bottom}
+.radio-aerial:after{content:'';position:absolute;top:-3px;left:-1px;width:5px;height:5px;border-radius:50%;background:#e7d5b5}
+.radio-grille{position:absolute;left:6%;top:11%;width:37%;height:67%;border-radius:50%;border:4px solid #a47759;box-shadow:inset 2px 3px 5px #38251840;background:radial-gradient(circle,#4b3a2d 0 1px,transparent 1.6px) 0 0/4px 4px,#c4a07c}
+.radio-mini-screen{position:absolute;right:5%;top:12%;width:46%;height:45%;border-radius:3px;background:#655749;box-shadow:inset 1px 2px 5px #2e251a55,0 0 0 2px #ccac86;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;color:#f3dfb7;padding:5px}
+.radio-mini-label{font:500 clamp(5px,.48vw,8px)/1.2 var(--sans);letter-spacing:1px;color:#dbb795}
+#radio-mini-title{display:block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:400 clamp(10px,.95vw,15px)/1.25 var(--serif)}
+#radio-mini-status{font:400 clamp(5px,.5vw,8px)/1.2 var(--sans);color:#ddc49d;white-space:nowrap}
+.radio-knob{position:absolute;bottom:10%;width:16%;aspect-ratio:1;border-radius:50%;border:3px solid #b68f69;background:linear-gradient(125deg,#fff0cf,#bba180);box-shadow:1px 2px 2px #71503925}
+.radio-knob:after{content:'';position:absolute;width:2px;height:35%;top:7%;left:44%;background:#98714f}
+.knob-one{left:51%}.knob-two{right:7%}
+.radio-tuning-line{position:absolute;bottom:7%;left:8%;width:33%;height:5px;background:repeating-linear-gradient(90deg,#7e6048 0 1px,transparent 1px 4px);border-bottom:1px solid #b99c78}
+.radio-led{position:absolute;left:8%;top:5%;width:5px;height:5px;border-radius:50%;background:#876c49}
+.radio-object.is-playing .radio-led{background:#d4dd8a;box-shadow:0 0 7px #fcf1a1}
+.radio-object.is-playing .radio-mini-screen{background:#575d43}
+.radio-object .object-caption{margin-top:22px}
+.radio-player{position:fixed;z-index:30;left:50%;bottom:max(20px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(420px,94vw);max-height:calc(100svh - 30px);overflow:auto;border-radius:12px;background:#fff9ee;box-shadow:0 15px 70px #39251e6b;border:1px solid #d3ac86;padding:14px 18px 18px}
+.radio-player-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:10px}
+.radio-player-heading .eyebrow{margin:0;color:#89664e;font-size:9px;letter-spacing:1.5px}
+.radio-player-heading .close-button{width:38px;min-width:38px;height:38px;min-height:38px;border-color:#dec4aa;font-size:25px}
+.radio-player-content{display:block}
+.radio-player-info{min-width:0}
+#radio-title{font:italic 29px/1.1 var(--serif);margin:0 0 5px;color:var(--deep-rose);overflow-wrap:anywhere}
+#radio-artist{font-size:12px;color:#856550;margin:0 0 11px}
+.radio-transport{display:flex;align-items:center;gap:10px;justify-content:center}
+.radio-transport button{display:grid;place-items:center;flex:none;width:44px;height:44px;padding:0;border:1px solid #d9baa1;border-radius:50%;background:#f7e6d4;color:#684a37;font-size:19px}
+.radio-transport button:hover{background:#eed5bd}
+.radio-transport #radio-play{width:48px;height:48px;background:var(--deep-rose);color:var(--paper);border:0;font-size:17px}
+.radio-seek{margin-top:12px}
+.radio-seek input{width:100%;accent-color:var(--rose);margin:0;min-height:20px}
+.radio-seek>div{display:flex;justify-content:space-between;font-size:10px;color:#947661;font-variant-numeric:tabular-nums}
+.radio-status{font-size:11px;line-height:1.5;color:#896c5d;margin:8px 0 0;min-height:16px}
+#radio-import-area{margin-top:10px;text-align:center}
+.radio-player-info .back-link{margin-bottom:0}
+@media(min-width:1600px){.table-scene{width:min(1320px,90vw);top:47%;height:43%;max-height:450px}.album-book,.nakhre-book{height:225px}.present{width:210px;height:210px}.pastry-art{width:220px;height:200px}.vintage-radio{width:225px;height:175px}}
+@media(max-height:650px) and (orientation:landscape){
+  .table-scene{width:94vw;top:48%;height:43%;min-height:155px;max-height:245px}
+  .table-surface{top:16%;height:69%}.table-leg{top:56%;height:40%}
+  .table-object{top:0;width:18%}.gift-object{top:1%}.pastry-object{top:12%}.radio-object{top:8%}
+  .album-book,.nakhre-book{height:clamp(96px,26vh,151px)}
+  .present{width:clamp(90px,25vh,145px);height:clamp(96px,26vh,151px)}
+  .pastry-art{width:clamp(96px,27vh,153px);height:clamp(88px,24vh,138px)}
+  .vintage-radio{width:clamp(105px,29vh,168px);height:clamp(80px,22vh,128px);border-width:5px;border-radius:11px 11px 7px 7px}
+  .radio-handle{border-width:5px}.radio-grille{border-width:3px}.radio-knob{border-width:2px}
+  .radio-mini-screen{gap:2px;padding:3px}#radio-mini-title{font-size:11px}.radio-mini-label,#radio-mini-status{font-size:6px;letter-spacing:.4px}
+  .object-caption{margin-top:15px}.pastry-object .object-caption{margin-top:8px}.radio-object .object-caption{margin-top:18px}
+  .object-caption strong{font-size:14px;padding:5px 10px;max-width:100%}.object-caption>span{display:none}
+  .little-vase{top:2%;transform:scale(.45)}
+  .radio-player{padding:8px 14px 13px;bottom:10px;max-height:calc(100svh - 20px)}
+  .radio-player-heading{margin-bottom:5px}.radio-player-heading .close-button{width:34px;height:34px;min-width:34px;min-height:34px}
+  #radio-title{font-size:26px}.radio-player-heading .eyebrow{font-size:8px}
+  .radio-status{font-size:10px}.radio-seek{margin-top:6px}.radio-transport{gap:9px}
+}
+@media(max-width:720px) and (orientation:landscape){.object-caption strong{font-size:13px;padding:5px 8px}.table-object{width:18.5%}.radio-aerial{height:45%}.radio-object .object-caption{margin-top:22px}}
+@media(max-width:600px) and (orientation:portrait){.table-scene{width:96vw}.object-caption strong{font-size:10px;padding:5px}.album-book,.nakhre-book{height:78px}.present{width:72px;height:78px}.pastry-art{width:75px;height:72px}.vintage-radio{width:75px;height:63px;border-width:4px}.radio-player{bottom:10px}.radio-handle{border-width:4px}}
+@media(max-width:900px) and (orientation:portrait) and (pointer:coarse){.radio-player{display:none!important}}
+@media(pointer:coarse){.radio-player-heading .close-button{min-width:44px;min-height:44px}.radio-seek input{min-height:30px}}

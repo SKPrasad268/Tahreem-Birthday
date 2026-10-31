@@ -1,0 +1,33 @@
+/* Flowers, paper ribbons, and five firework blooms fill the viewport once. */
+.birthday-blast-active{overflow-x:hidden}
+.birthday-blast-layer{position:fixed;inset:0;width:100vw;height:100vh;height:100svh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;overflow:hidden;pointer-events:none!important;z-index:1000;contain:strict}
+.birthday-blast-layer::backdrop{background:transparent;pointer-events:none}
+.birthday-blast-layer *{pointer-events:none!important}
+.party-flower,.party-ribbon,.party-firework-ray,.party-shockwave{position:absolute;display:block;will-change:transform,opacity}
+.party-flower{font-family:Georgia,serif;line-height:1;text-shadow:0 2px 3px #a2617530}
+.party-ribbon{width:8px;height:21px;border-radius:2px;box-shadow:0 1px 2px #835b6d22}
+.party-firework-ray{width:3px;height:29px;border-radius:50%;background:currentColor;transform-origin:50% 100%;filter:drop-shadow(0 0 4px currentColor)}
+.party-shockwave{width:80px;height:80px;border:2px solid #e8c887;border-radius:50%;box-shadow:0 0 24px #efcc8c30}
+.kinder-reveal--party .kinder-half{animation:none!important;transform:none}
+.kinder-reveal--party{--party-shell-left:-55px;--party-shell-right:55px}
+.kinder-reveal--party .kinder-opening{cursor:pointer}
+.kinder-reveal--party .kinder-opening-flower{opacity:0;animation:none}
+.kinder-reveal--party .kinder-burst{display:none}
+.kinder-reveal--party .party-has-burst .kinder-half-left{animation:party-shell-left .7s cubic-bezier(.18,.75,.3,1) both!important}
+.kinder-reveal--party .party-has-burst .kinder-half-right{animation:party-shell-right .7s cubic-bezier(.18,.75,.3,1) both!important}
+.kinder-reveal--party .party-has-burst .kinder-opening-flower{opacity:1;animation:party-emblem .8s both}
+.kinder-message--party{text-align:center;padding:32px 27px}
+.kinder-message--party h3{font-size:34px}
+.kinder-message--party .kinder-message-text{font:italic 18px/1.6 var(--serif)}
+.party-static-flowers{font:31px/1.5 var(--serif);letter-spacing:8px;color:#c29a78;margin-top:17px;opacity:.35}
+.party-has-celebrated .party-static-flowers{opacity:1}
+.party-status{font:italic 18px/1.6 var(--serif);color:#9c6880;margin:12px 0 20px}
+.kinder-party-replay{min-height:44px;padding:11px 21px;border:1px solid #c590a4;border-radius:24px;background:#a36a84;color:#fff8ec;font:12px/1.4 var(--sans)}
+.kinder-party-replay span{margin-left:10px;font-size:18px}.kinder-party-replay:disabled{opacity:.65}
+@keyframes party-shell-left{0%{transform:none}25%{transform:rotate(-7deg) scale(1.08)}100%{transform:translate(var(--party-shell-left),22px) rotate(-28deg);opacity:.9}}
+@keyframes party-shell-right{0%{transform:none}25%{transform:rotate(7deg) scale(1.08)}100%{transform:translate(var(--party-shell-right),22px) rotate(28deg);opacity:.9}}
+@keyframes party-emblem{from{opacity:0;transform:translateY(60px) scale(.2)}to{opacity:1;transform:translateY(-12px) scale(1.2)}}
+@media(max-height:650px) and (orientation:landscape){.kinder-reveal--party{--party-shell-left:-30px;--party-shell-right:30px}.kinder-message--party{padding:20px}.kinder-message--party h3{font-size:27px}.kinder-message--party .kinder-message-text,.party-status{font-size:15px}.party-static-flowers{margin-top:9px;font-size:26px}.party-status{margin:8px 0 13px}}
+.garden-motion-off .kinder-reveal--party .party-has-burst .kinder-half-left{animation:none!important;transform:translate(-44px,14px) rotate(-25deg)}
+.garden-motion-off .kinder-reveal--party .party-has-burst .kinder-half-right{animation:none!important;transform:translate(44px,14px) rotate(25deg)}
+@media(prefers-reduced-motion:reduce){.kinder-reveal--party .party-has-burst .kinder-half-left{animation:none!important;transform:translate(-44px,14px) rotate(-25deg)}.kinder-reveal--party .party-has-burst .kinder-half-right{animation:none!important;transform:translate(44px,14px) rotate(25deg)}.kinder-reveal--party .party-has-burst .kinder-opening-flower{animation:none;transform:none}}

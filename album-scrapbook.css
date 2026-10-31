@@ -1,0 +1,110 @@
+/* A garden scrapbook: warm paper, pressed flowers, and little handmade details. */
+body[data-open-object="album"] .experience-dialog{
+  background-color:#f7e7e7;
+  background-image:radial-gradient(ellipse at 3% 95%,#dce3c887,transparent 48%),radial-gradient(ellipse at 97% 5%,#edc4d592,transparent 50%),radial-gradient(#a97b8b16 .7px,transparent .7px);
+  background-size:auto,auto,7px 7px;
+  border:1px solid #d7b3bd;border-radius:13px;
+  box-shadow:0 30px 100px #38212b66,inset 0 0 0 5px #fff5e96b;
+}
+body[data-open-object="album"] .dialog-header{
+  overflow:hidden;isolation:isolate;background:#f1d9df;
+  background-image:linear-gradient(100deg,#f5e6df,#efcedc 72%,#e2d9c5);
+  border-bottom:1px solid #d5a9b8;box-shadow:0 3px 12px #78505d0b;
+  padding:23px 31px 20px;
+}
+body[data-open-object="album"] .dialog-header:after{
+  content:'';position:absolute;z-index:-1;right:99px;top:-33px;width:174px;height:174px;
+  background:url('assets/flower.svg') center/contain no-repeat;opacity:.12;transform:rotate(18deg);pointer-events:none;
+}
+body[data-open-object="album"] .dialog-header .eyebrow{color:#825366;font-size:9px;letter-spacing:2.5px}
+body[data-open-object="album"] .dialog-header h2{font-size:42px;color:#743650;text-shadow:0 1px #fff6e8}
+body[data-open-object="album"] .close-button{background:#fff8edb8;border-color:#c793a6;color:#823b58}
+body[data-open-object="album"] .dialog-body{padding:25px 27px 17px}
+body[data-open-object="album"] .dialog-footnote{color:#8d5c70;padding-bottom:17px}
+.album-spread{
+  position:relative;gap:34px;padding:27px 24px 25px;border:1px solid #e4c6c9;border-radius:8px;
+  background:linear-gradient(90deg,#fffbf0f2 0%,#fbf0e6f2 48.8%,#c8aba44a 49.9%,#fff8ee 50.3%,#fff4e9ed 100%);
+  box-shadow:0 7px 20px #80516112,inset 0 0 0 5px #fffdf53d;
+}
+.album-spread:before,.album-spread:after{content:'';position:absolute;pointer-events:none}
+.album-spread:before{inset:9px;border:1px solid #be9c9924;border-radius:3px}
+.album-spread:after{right:13px;bottom:11px;width:38px;height:28px;border-right:1px solid #b78495;border-bottom:1px solid #b78495;border-radius:0 0 18px 0;opacity:.45}
+.album-photo{
+  position:relative;z-index:1;background:#fffdf4;padding:11px 11px 30px;border:1px solid #e2cec3;
+  box-shadow:2px 9px 13px #754b4a19,0 1px 2px #754b4a0f;transform:rotate(-2.5deg);
+}
+.album-photo:before,.album-photo:after{
+  content:'';position:absolute;z-index:2;top:-13px;width:77px;height:28px;pointer-events:none;
+  border:1px solid #bc869b30;box-shadow:0 1px 2px #5d324411;
+  background-color:#d6a3b3ab;
+  background-image:repeating-linear-gradient(90deg,#fff7e44d 0 7px,transparent 7px 14px),repeating-linear-gradient(0deg,#fff7e438 0 7px,transparent 7px 14px);
+  clip-path:polygon(3% 0,97% 2%,100% 90%,96% 100%,1% 96%,0 10%);
+}
+.album-photo:before{left:8%;transform:rotate(-12deg)}
+.album-photo:after{right:5%;transform:rotate(15deg);background-color:#b7c2a794}
+.album-photo img,.album-photo video{
+  height:min(37svh,310px);object-fit:contain;
+  background-color:#e6d7ce;
+  background-image:linear-gradient(135deg,#f0e1d8,#d6dfcd);
+  border-radius:2px;box-shadow:inset 0 0 0 1px #9575651f;
+}
+.album-photo .album-memory-label{display:block;margin:11px 1px -14px;font-size:8px!important;letter-spacing:1.6px;color:#9a6378!important}
+.album-caption{
+  position:relative;isolation:isolate;padding:45px 12px 15px 17px;align-self:center;
+}
+.album-caption:before{
+  content:'';position:absolute;z-index:-1;inset:49px -3px 6px 0;border-radius:2px;
+  background:repeating-linear-gradient(transparent 0 30px,#b4898d12 30px 31px);
+  border-bottom:1px solid #b4898d24;transform:rotate(1deg);pointer-events:none;
+}
+.album-pressed-sprig{position:absolute;top:-28px;right:-5px;width:112px;height:104px;transform:rotate(8deg);opacity:.9;pointer-events:none}
+.album-pressed-sprig svg{display:block;width:100%;height:100%;filter:drop-shadow(1px 2px 1px #6f4b3210)}
+.album-caption .album-memory-chip{
+  display:table;padding:5px 11px;margin:5px 0 16px;font:500 8px/1.6 var(--sans);letter-spacing:1.8px;
+  color:#87506a;background:#efdae2;border:1px solid #d8adbf;border-radius:20px;
+}
+.album-caption h3{position:relative;color:#74364f;font-size:30px;line-height:1.23;margin:0 0 18px;text-wrap:pretty}
+.album-caption .album-personal-note{font:400 14px/1.9 var(--serif);color:#775b64;white-space:pre-line}
+.album-keepsake-mark{display:flex;align-items:center;gap:11px;margin:24px 0 4px;color:#a66882}
+.album-keepsake-mark .album-flower{display:block;margin:0;font-size:33px;line-height:1;color:#bc819b;transform:rotate(-13deg)}
+.album-keepsake-mark>span:last-of-type{font:italic 12px/1.4 var(--serif);color:#9b7381}
+.album-star-doodle{width:62px;height:48px;flex:none;margin-left:auto;color:#b77d91;transform:rotate(-7deg)}
+.album-nav{gap:17px;margin-top:20px}
+.album-nav button{background:#fff9ee;border-color:#cda1b2;box-shadow:0 3px 7px #6e43500a;color:#85445e;min-width:105px}
+.album-nav button:not(:disabled):hover{background:#efd0dd;transform:translateY(-2px)}
+.album-nav button:disabled{opacity:.45}
+.album-nav .page-count{min-width:73px;min-height:39px;display:grid;place-items:center;background:#e6d2d9;border:1px dashed #b9839b;border-radius:50%;font:italic 14px/1 var(--serif);color:#814761}
+.album-caption{animation:scrapbook-note-arrive .5s ease-out both}
+@keyframes scrapbook-note-arrive{from{opacity:.4;translate:0 8px}to{opacity:1;translate:0 0}}
+@media(max-height:650px) and (orientation:landscape){
+  body[data-open-object="album"] .dialog-header{padding:12px 23px 10px}
+  body[data-open-object="album"] .dialog-header h2{font-size:29px}
+  body[data-open-object="album"] .dialog-header .eyebrow{font-size:7px;letter-spacing:1.8px}
+  body[data-open-object="album"] .dialog-header:after{width:112px;height:112px;top:-19px;right:82px}
+  body[data-open-object="album"] .dialog-body{padding:17px 23px 11px}
+  body[data-open-object="album"] .dialog-footnote{font-size:9px;padding:2px 12px 9px}
+  .album-spread{gap:27px;padding:13px 17px 12px}
+  .album-photo{padding:7px 7px 23px}
+  .album-photo:before,.album-photo:after{width:52px;height:21px;top:-9px}
+  .album-photo img,.album-photo video{height:clamp(106px,34svh,185px)}
+  .album-photo .album-memory-label{font-size:6px!important;letter-spacing:1px;margin:7px 0 -13px}
+  .album-caption{padding:24px 6px 3px 11px}
+  .album-caption:before{inset:28px -1px 3px 0}
+  .album-pressed-sprig{width:68px;height:63px;top:-22px;right:-2px}
+  .album-caption .album-memory-chip{font-size:7px;letter-spacing:1px;padding:3px 8px;margin:2px 0 9px}
+  .album-caption h3{font-size:24px;margin:0 0 10px}
+  .album-caption .album-personal-note{font-size:12px;line-height:1.65}
+  .album-keepsake-mark{margin:13px 0 0;gap:8px}
+  .album-keepsake-mark .album-flower{font-size:24px}
+  .album-keepsake-mark>span:last-of-type{font-size:9px}
+  .album-star-doodle{width:43px;height:32px}
+  .album-nav{margin-top:12px;gap:15px}.album-nav button{min-width:94px;padding:8px 13px;font-size:11px}
+  .album-nav .page-count{min-height:33px;min-width:62px;font-size:12px}
+}
+@media(max-width:680px) and (orientation:portrait){
+  .album-spread{grid-template-columns:1fr;gap:24px;padding:23px;background:#fff7ed}
+  .album-caption{padding-top:20px}.album-pressed-sprig{top:-16px}
+  .album-photo{max-width:100%}.album-photo img,.album-photo video{height:min(37svh,310px)}
+}
+.garden-motion-off .album-caption{animation:none}
+@media(prefers-reduced-motion:reduce){.album-caption{animation:none}.album-nav button:not(:disabled):hover{transform:none}}

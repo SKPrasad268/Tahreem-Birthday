@@ -1,0 +1,41 @@
+/* Independent translate preserves each book's rotation and the existing breeze. */
+@supports (translate: 1px 1px) {
+  .ambient-arrival {
+    animation: garden-arrival 620ms cubic-bezier(.2,.72,.25,1) var(--arrival-delay, 0ms) both;
+  }
+  .garden-depth-ready > .garden-art,
+  .garden-depth-ready > .garden-foliage {
+    inset: -8px;
+    transition: translate 280ms ease-out;
+  }
+  .garden-depth-ready > .garden-art {
+    translate: calc(var(--garden-depth-x, 0px) * .45) calc(var(--garden-depth-y, 0px) * .45);
+  }
+  .garden-depth-ready > .foliage-left,
+  .garden-depth-ready > .foliage-right {
+    translate: var(--garden-depth-x, 0px) var(--garden-depth-y, 0px);
+  }
+  .garden-depth-ready > .foliage-canopy {
+    translate: calc(var(--garden-depth-x, 0px) * .8) calc(var(--garden-depth-y, 0px) * .8);
+  }
+}
+@keyframes garden-arrival {
+  from { opacity: 0; translate: 0 15px; }
+  to { opacity: 1; translate: 0 0; }
+}
+.garden-motion-off .ambient-arrival,
+.garden-motion-paused .ambient-arrival {
+  animation: none !important;
+  opacity: 1;
+  translate: none;
+}
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .garden-depth-ready > .garden-art,
+  .garden-depth-ready > .garden-foliage {
+    translate: none !important;
+    transition: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-arrival { animation: none !important; opacity: 1; translate: none; }
+}

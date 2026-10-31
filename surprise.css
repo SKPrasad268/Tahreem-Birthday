@@ -1,0 +1,39 @@
+/* The bouquet is the centrepiece of the gift-box reveal. */
+.bouquet-surprise{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(240px,.8fr);align-items:center;gap:22px;isolation:isolate}
+.bouquet-portrait{position:relative;min-width:0;margin:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.bouquet-halo{position:absolute;z-index:-1;inset:5% -8% 10%;border-radius:50%;background:radial-gradient(ellipse,#f4d9e375 0%,#f8e6de40 48%,transparent 72%);pointer-events:none}
+.surprise-bouquet{display:block;width:100%;height:clamp(400px,60svh,570px);object-fit:contain;filter:drop-shadow(0 16px 18px #6f294416);animation:bouquet-unfold .8s cubic-bezier(.16,.75,.22,1) both;transform-origin:50% 90%}
+.bouquet-portrait figcaption{text-align:center;margin-top:4px;font:italic 12px/1.5 var(--serif);color:#9b7582}
+.bouquet-copy{padding:12px 0 12px 8px;min-width:0}
+.bouquet-copy>.eyebrow{font-size:9px;letter-spacing:1.7px;color:#a07485;margin-bottom:14px}
+.bouquet-copy>h3{font:400 clamp(34px,3vw,46px)/1.06 var(--serif);letter-spacing:-1px;margin:0 0 18px}
+.bouquet-copy>h3 em{color:var(--deep-rose);font-weight:400}
+.bouquet-message{font:400 13px/1.8 var(--sans);color:var(--muted);max-width:270px;margin:0 0 24px}
+.bouquet-gifts{display:flex;flex-direction:column;gap:9px;padding:0;margin:0}
+.bouquet-gifts .gift-option{display:flex;align-items:center;gap:13px;text-align:left;padding:12px 14px;border-color:#e5cbd1;box-shadow:none;background:#f9e9ed;min-height:65px}
+.bouquet-gifts .gift-option:nth-child(2){background:#f4eddc;border-color:#e4d9be}
+.bouquet-gifts .gift-option:nth-child(3){background:#f5e8ee}
+.bouquet-gifts .gift-option:hover{transform:translateX(3px);background:#fff6eb}
+.bouquet-gifts .gift-option-icon{width:30px;height:32px;flex:none;margin:0;font-size:27px}
+.bouquet-gifts .gift-option-copy{gap:3px;margin:0;flex:1}
+.bouquet-gifts .gift-option-title{font-size:21px}
+.bouquet-gifts .gift-option-copy>span:last-child{font-size:10px;line-height:1.6}
+.bouquet-gifts .gift-option>span:last-child{font-size:14px;color:#9f6d82}
+@keyframes bouquet-unfold{from{opacity:0;transform:translateY(20px) scale(.9) rotate(-4deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@media(max-height:650px) and (orientation:landscape){
+ .bouquet-surprise{grid-template-columns:minmax(0,1.18fr) minmax(220px,.82fr);gap:20px}
+ .surprise-bouquet{height:clamp(200px,60svh,310px)}
+ .bouquet-copy{padding:0 0 0 3px}.bouquet-copy>.eyebrow{font-size:7px;letter-spacing:1.3px;margin-bottom:7px}
+ .bouquet-copy>h3{font-size:28px;line-height:1.02;margin-bottom:12px}.bouquet-copy>h3 br{display:none}
+ .bouquet-message{display:none}
+ .bouquet-gifts{gap:6px}.bouquet-gifts .gift-option{min-height:44px;padding:6px 11px;gap:10px}
+ .bouquet-gifts .gift-option-title{font-size:19px}.bouquet-gifts .gift-option-copy>span:last-child{display:none}
+ .bouquet-gifts .gift-option-icon{width:24px;height:28px;font-size:23px}
+ .bouquet-portrait figcaption{font-size:10px;margin-top:0}
+}
+@media(max-width:600px) and (orientation:portrait){
+ .bouquet-surprise{grid-template-columns:1fr;gap:20px}.surprise-bouquet{height:330px}
+ .bouquet-copy{padding:0 5px}.bouquet-copy>h3 br{display:none}
+ .bouquet-message{max-width:none}.bouquet-gifts .gift-option{min-height:65px}
+}
+@media(prefers-reduced-motion:reduce){.surprise-bouquet{animation:none!important}}

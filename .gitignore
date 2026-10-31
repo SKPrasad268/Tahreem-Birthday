@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+Thumbs.db
+playwright-report/
+test-results/
+server-data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+/assets/Nakhre/Pvt album/
+*.encrypted.json.tmp

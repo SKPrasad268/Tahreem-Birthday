@@ -1,0 +1,8 @@
+{
+  "name": "tahreem-birthday-garden",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An illustrated birthday garden for Tahreem, ready for GitHub Pages.",
+  "scripts": { "start": "node server.cjs", "update-assets": "node scripts/sync-assets.cjs", "test": "node --test scripts/test-nakhre.cjs" },
+  "engines": { "node": ">=22.16" }
+}

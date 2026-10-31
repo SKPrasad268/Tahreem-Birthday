@@ -1,0 +1,12 @@
+/* The shared objects travel; navigation controls stay available throughout. */
+.bouquet-gifts .gift-route-icon{position:relative;display:grid;place-items:center;overflow:visible;width:39px;height:39px;isolation:isolate}
+.gift-route-icon>svg{display:block;width:100%;height:100%;overflow:visible}
+.gift-route-icon .cake-svg{filter:drop-shadow(0 2px 2px #68452e22)}
+.gift-route-icon .cake-candle-flame{animation:none}
+.gift-route-notes-icon:before,.gift-route-notes-icon:after{content:'';position:absolute;inset:5px 2px;border:1px solid #d1ba95;border-radius:2px;background:#f7ecd4;z-index:-1;transform:rotate(-12deg) translate(-3px,-3px)}
+.gift-route-notes-icon:after{transform:rotate(11deg) translate(3px,-4px);background:#e5e9da}
+.gift-route-flight{position:fixed;z-index:1;pointer-events:none;transform-origin:50% 50%;will-change:transform,opacity}
+.gift-route-flight,.gift-route-flight *{pointer-events:none!important;animation:none!important;transition:none!important}
+.gift-route-flight>.reading-envelope-art{display:block}
+@media(max-height:650px) and (orientation:landscape){.bouquet-gifts .gift-route-icon{width:32px;height:32px}}
+@media(prefers-reduced-motion:reduce){.gift-route-flight{display:none}}

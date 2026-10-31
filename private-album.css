@@ -1,0 +1,48 @@
+.nakhre-private-link{display:flex;align-items:center;gap:6px;flex:none;min-height:34px;padding:6px 11px;border:1px solid #bd8ca4;border-radius:20px;background:#fff7ec;color:#874f6b;font:10px/1.4 var(--sans);white-space:nowrap}
+.nakhre-private-link:hover{background:#ebcbd9}
+.nakhre-private-link svg{width:13px;height:16px}
+.private-album-panel{color:#795264}
+.private-back{border:0;background:transparent;color:#91617a;padding:7px 0;font:11px/1.5 var(--sans);min-height:38px}
+.private-sealed{position:relative;isolation:isolate;max-width:680px;margin:10px auto 18px;border:1px solid #d9b8c5;border-radius:9px;padding:34px 65px 27px;text-align:center;background:#fff7ed;background-image:radial-gradient(ellipse at 100% 0,#efd6e1a8,transparent 55%),radial-gradient(#bd8ca61c .7px,transparent .7px);background-size:auto,7px 7px;box-shadow:0 4px 0 #edd6df,0 12px 35px #87506b14}
+.private-sealed:after{content:'';position:absolute;z-index:-1;width:170px;height:170px;right:-35px;top:-12px;background:url('assets/flower.svg') center/contain no-repeat;opacity:.08;pointer-events:none}
+.private-seal-art{display:block;width:65px;margin:0 auto 18px;color:#aa708c;transform:rotate(-6deg)}
+.private-seal-art svg{display:block;width:100%}
+.private-eyebrow{font:8px/1.6 var(--sans);letter-spacing:1.7px;color:#ac7e95;margin:0 0 12px}
+.private-sealed h3{font:italic 36px/1.2 var(--serif);font-weight:400;color:#874668;margin:0 0 12px}
+.private-intro{font:italic 15px/1.7 var(--serif);color:#a27c8a;margin:0 0 25px}
+#private-unlock-form{max-width:360px;margin:0 auto;text-align:left}
+#private-unlock-form label{display:block;font:11px/1.6 var(--sans);margin:0 0 7px;color:#8d5e75}
+.private-password-row{display:flex;border:1px solid #d3b1c0;border-radius:4px;background:#fffdfa;overflow:hidden}
+.private-password-row input{display:block;width:100%;min-width:0;padding:12px;border:0;background:transparent;color:#704259;font:13px/1.5 var(--sans)}
+.private-password-row input::placeholder{color:#b092a1;font-size:11px}
+.private-password-row button{flex:none;min-width:50px;padding:5px 10px;border:0;border-left:1px solid #e8d6dd;background:#f9eff0;color:#955f7a;font:10px/1.5 var(--sans)}
+.private-unlock{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:44px;margin-top:12px;padding:11px 15px;border:1px solid #985477;border-radius:4px;background:#995675;color:#fff8ed;font:12px/1.5 var(--sans)}
+.private-unlock:disabled{opacity:.6;cursor:wait}
+.private-status{min-height:20px;margin:13px 0 0;font:12px/1.5 var(--sans);color:#a14f68}
+.private-lock-note{font:italic 11px/1.6 var(--serif);color:#af8e9b;margin:15px 0 0}
+.private-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;padding-bottom:12px}
+.private-toolbar>button:last-child{min-height:36px;padding:7px 12px;border:1px solid #bf91a7;border-radius:20px;background:#fff7ee;color:#87536d;font:10px/1.5 var(--sans)}
+.private-open-label{font:8px/1.5 var(--sans);letter-spacing:1.3px;color:#a67c90}
+.private-page{border:1px solid #dec2ca;border-radius:5px;background:#fff7ed;padding:22px 25px 18px;box-shadow:0 4px 0 #e9d0d9}
+.private-photo-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:32px;padding:10px 3px}
+.private-photo-layout figure{margin:0;min-width:0;border:1px solid #e3d5ce;background:#fffdfa;padding:10px 9px 8px;box-shadow:0 4px 13px #70485b1c;transform:rotate(-1deg)}
+.private-photo{display:block;width:100%;height:min(55svh,490px);object-fit:contain;background:#efe7e2}
+.private-photo-layout figcaption{text-align:center;font:8px/1.5 var(--sans);letter-spacing:1.5px;color:#aa8194;margin-top:9px}
+.private-caption{min-width:0}
+.private-caption h3{font:italic 31px/1.25 var(--serif);font-weight:400;color:#82445f;overflow-wrap:anywhere;margin:0 0 24px}
+.private-caption p{font:italic 14px/1.5 var(--serif);color:#a57b8e}
+.private-caption>span{display:block;font-size:25px;color:#b57f9b;margin:20px 0}
+.private-full-size{border:0;border-bottom:1px solid #c197ac;background:transparent;color:#9b6681;padding:5px 0;font:11px/1.5 var(--sans)}
+.private-nav{display:flex;align-items:center;justify-content:center;gap:24px;padding:20px 0 9px}
+.private-nav button{border:1px solid #cba1b6;border-radius:23px;background:#fff7ed;color:#89536d;min-height:40px;padding:7px 15px;font:11px/1.5 var(--sans)}
+.private-nav button:disabled{opacity:.4}
+.private-nav>span{font:11px/1.5 var(--sans);color:#aa7d94}
+.private-page.is-enlarged .private-photo-layout{grid-template-columns:1fr}
+.private-page.is-enlarged .private-photo{height:auto;max-height:none}
+.private-page.is-enlarged .private-photo-layout figure{width:min(850px,100%);margin:auto;transform:none}
+.private-page.is-enlarged .private-caption{text-align:center}
+@media(max-height:650px) and (orientation:landscape){.nakhre-issue-bar{flex-wrap:wrap}.nakhre-private-link{min-height:28px;font-size:9px;padding:4px 9px}.nakhre-private-link svg{width:11px;height:13px}.private-sealed{max-width:650px;padding:19px 38px 15px;margin-top:4px}.private-seal-art{width:38px;margin-bottom:9px}.private-sealed h3{font-size:28px;margin-bottom:8px}.private-eyebrow{font-size:7px;margin-bottom:8px}.private-intro{font-size:12px;margin-bottom:14px}.private-password-row input{padding:9px}.private-unlock{min-height:37px;padding:8px 12px;margin-top:9px}.private-lock-note{margin-top:8px}.private-status{margin-top:9px;font-size:11px}.private-toolbar{gap:8px;padding-bottom:8px}.private-open-label{font-size:7px}.private-page{padding:15px 19px}.private-photo{height:49svh}.private-photo-layout{gap:24px}.private-caption h3{font-size:23px;margin-bottom:17px}.private-caption p{font-size:12px}.private-nav{padding-top:15px;gap:18px}.private-nav button{min-height:35px;font-size:10px}.private-toolbar>button:last-child{min-height:32px}.private-back{font-size:10px;min-height:32px}}
+@media(max-width:650px) and (orientation:portrait){.private-sealed{padding:25px 20px}.private-toolbar{flex-wrap:wrap}.private-photo-layout{grid-template-columns:1fr}.private-sealed h3{font-size:29px}.private-open-label{display:none}.private-caption h3{font-size:25px}.nakhre-issue-bar{flex-wrap:wrap}}
+/* Drive links appear only in the unlocked page. */
+.private-drive-open{display:block;width:fit-content;margin-top:12px;color:#97647f;font:12px/1.5 var(--sans);text-underline-offset:4px}
+.private-image-error{padding:30px 20px;color:var(--muted);font:15px/1.8 var(--serif);text-align:center}

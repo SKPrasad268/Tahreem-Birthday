@@ -1,0 +1,10 @@
+/* Original photos and videos share the same uncropped Album page. */
+.album-photo img,.album-photo video{display:block;width:100%;height:min(39svh,340px);object-fit:contain;background:#f0e2dd}
+.album-photo video{transform:rotate(3deg);border-radius:3px}
+.album-photo:has(video){transform:none}
+.album-photo:has(video) video{transform:none}
+.album-video-status{font:400 11px/1.6 var(--sans);color:var(--muted);margin:12px 0 0}
+.album-video-status:empty{display:none}
+.album-video-error{padding:15px;background:#f5e7e7;border-radius:3px;color:#864d61}
+.album-caption h3{overflow-wrap:anywhere}
+@media(max-height:650px) and (orientation:landscape){.album-photo img,.album-photo video{height:clamp(120px,38svh,210px)}.album-video-status{font-size:10px;margin-top:6px}.album-caption h3{font-size:26px}}

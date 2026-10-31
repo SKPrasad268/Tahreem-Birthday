@@ -1,0 +1,41 @@
+/* The cake takes the centre place and the present moves to its right. */
+.cake-object{left:41%;top:-7%}
+.gift-object{left:61%;top:13%}
+.three-tier-table-art{display:block;position:relative;width:clamp(135px,14.4vw,220px);height:clamp(145px,15vw,230px)}
+.cake-object .object-caption{margin-top:5px}
+.cake-object .object-caption>span{white-space:nowrap}
+.cake-scene{padding:4px 0 16px;text-align:left}
+.cake-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(220px,.85fr);gap:20px;align-items:center}
+.cake-theatre{position:relative;isolation:isolate;width:100%;aspect-ratio:560/380;margin:0 auto;overflow:visible;border-radius:50%;background:radial-gradient(ellipse at 54% 70%,#edc7c975,transparent 69%)}
+.cake-theatre>.birthday-cake-art{position:absolute;inset:0;z-index:1}
+.cake-theatre .cake-helper{left:10.7142857%;top:71.0526316%;width:8.5714286%;height:15.7894737%}
+.cake-invitation{text-align:center;min-width:0;padding:12px 0}
+.cake-invitation>.eyebrow{font-size:9px;letter-spacing:1.5px;margin-bottom:10px}
+.cake-invitation .cake-message{font:italic 32px/1.18 var(--serif);color:var(--deep-rose);margin:0 0 18px}
+.cake-invitation .cake-flavour-note{font:italic 12px/1.6 var(--serif);color:#a07882;max-width:245px;margin:-5px auto 17px}
+.cake-invitation #blow-candles{min-width:0;width:100%;max-width:245px;margin:0 auto 12px;border-radius:25px;box-shadow:0 4px 12px #6e354620}
+.cake-invitation #blow-candles:disabled{opacity:.8;cursor:default}
+.cake-invitation .wish-result{font:italic 15px/1.6 var(--serif);color:var(--muted);min-height:48px;margin:10px auto;max-width:260px}
+.cake-replay{display:block;min-height:44px;margin:6px auto 0;padding:8px 14px;background:none;border:1px solid var(--line);border-radius:24px;font:400 11px/1.4 var(--sans)}
+.cake-scene+.wish-cards{margin-top:10px}
+@media(min-width:1600px){.three-tier-table-art{width:238px;height:245px}}
+@media(max-height:650px) and (orientation:landscape){
+  .cake-object{top:-8%}.gift-object{top:12%}
+  .three-tier-table-art{width:clamp(104px,28vh,166px);height:clamp(114px,31vh,183px)}
+  .cake-object .object-caption{margin-top:5px}
+  .cake-layout{grid-template-columns:minmax(0,1.3fr) minmax(200px,1fr);gap:12px}
+  .cake-theatre{width:min(100%,clamp(258px,75.157895svh,405px));height:auto;max-width:100%}
+  .cake-invitation{padding:0}.cake-invitation>.eyebrow{font-size:7px;margin-bottom:6px}
+  .cake-invitation .cake-message{font-size:25px;margin-bottom:10px}
+  .cake-invitation .cake-flavour-note{font-size:10px;margin:-2px auto 12px}
+  .cake-invitation #blow-candles{max-width:230px;margin-bottom:7px;padding:10px 14px}
+  .cake-invitation .wish-result{font-size:12px;min-height:36px;margin:6px auto}
+  .cake-replay{margin-top:0;font-size:10px}
+  .cake-scene{padding:0 0 8px}
+}
+@media(max-width:600px) and (orientation:portrait){
+  .three-tier-table-art{width:85px;height:96px}
+  .cake-layout{grid-template-columns:1fr;gap:0}
+  .cake-theatre{width:100%;max-width:450px}
+}
+.garden-motion-paused .cake-candle-smoke{animation-play-state:paused}
